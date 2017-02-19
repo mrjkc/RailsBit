@@ -3,16 +3,25 @@
     <body>
         <%= form_for @article do |x| %>
         
-        <h4><%= x.label "Article Title" %></h4>
-        <p><%= x.text_field :title, size: "20x5" %></p>
+            <h4><%= x.label "Article Title" %></h4>
+            <p><%= x.text_field :title, size: "20x5" %></p>
+            
+            <h4><%= x.label "Author Name" %></h4>
+            <p><%= x.text_field :author_name, size: "20x5" %></p>
+            
+            <h4><%= x.label "Article" %></h4>
+            <p><%= x.text_area :text, size: "70x20" %></p>
+            
+            <%= x.submit 'Upload Article', class: "btn btn-md btn-primary" %>
+            
+        <% end %>
         
-        <h4><%= x.label "Author Name" %></h4>
-        <p><%= x.text_field :author_name, size: "20x5" %></p>
+        <%= form_for :video do |x| %>
         
-        <h4><%= x.label "Article" %></h4>
-        <p><%= x.text_area :text, size: "70x20" %></p>
-        
-        <%= x.submit 'Upload Article', class: "btn btn-md btn-primary" %>
+            <h4><%= x.label "Add video Link" %></h4>
+            <p><%= x.text_field :link, size: "20x5" %></p>
+            
+            <%= x.submit 'Add Video', class: "btn btn-sm btn-primary" %>
         
         <% end %>
     </body>

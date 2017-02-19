@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   
   # Create actions
   
+  post "articles/new" => 'articles#new_link'
   resources :articles
 
   # Example of regular route:

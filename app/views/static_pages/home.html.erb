@@ -43,10 +43,14 @@
 </div>
 <div class="container"> 
     <div class="row">
-        <div class="col col-md-4">
-            <div class="thumbnail">
-                <h1>test</h1>
+        <h1>Videos</h1>
+        <%= @videos.find_each do |x| %>
+            <div class="col col-md-4">
+                <% puts "#{x.link}" %>
+                <iframe width="400" height="300" 
+                    src=<%= "https://www.youtube.com/embed/#{x.link}" %> frameborder="0" allowfullscreen>
+                </iframe>
             </div>
-        </div>
+        <% end %>    
     </div>
 </div>
