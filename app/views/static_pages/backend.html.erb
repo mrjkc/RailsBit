@@ -1,0 +1,28 @@
+<% provide(:title, 'BackEnd') %>
+
+<div class="jumbotron" id="backend_jumbo">
+    <h4>Everything About (Railsy) Web Development.</h4> 
+    <div class="btn-group">
+    <%= link_to "Front End", root_path, class: "btn btn-sm btn-default sharp" %>
+    <%= link_to "Back End"  , root_path, class: "btn btn-sm btn-danger sharp" %>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <h1>Articles</h1>
+    </div>    
+</div>
+<!-- Display Articles -->
+<div class="container">
+    <div class="row">
+        <%= @articles.find_each do |x| %>
+            <div class="col-xs col-sm-4 col-md nopadding">
+                <div class="thumbnail">
+                    <%= image_tag "cage.png", size: "400x400" %>
+                    <h4 id="article_h4"><p id="title_p"><%= x.title %></p></h4>
+                    <p id="article_p"><%= x.text %></p>
+                </div>    
+            </div> 
+        <% end %>
+    </div>
+</div>

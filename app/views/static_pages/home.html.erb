@@ -1,0 +1,52 @@
+<% provide(:title, 'Home') %>
+<div class="center container" id="header_title">
+    <div class="row">
+        <h3>Welcome to RailsBit, here you can find everything about Railsy web development</h3>
+    </div>    
+</div>
+<div class="jumbotron">
+    <h4>Everything About (Railsy) Web Development.</h4> 
+    <div class="btn-group">
+    <%= link_to "Front End", root_path, class: "btn btn-sm btn-default sharp" %>
+    <%= link_to "Back End"  , backend_path, class: "btn btn-sm btn-danger sharp" %>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <h1>Articles</h1>
+    </div>    
+</div>
+<!-- Display Articles -->
+
+<!-- iteration count variable -->
+<% break_int = 0 %>
+
+<div class="container">
+    <div class="row row-sm-2">
+        <%= @articles.find_each do |x| %>
+            <div class="col-xs col-sm-4 col-md nopadding">
+                <div class="thumbnail">
+                    <%= link_to image_tag("cage.png", size: "400x400"),
+                                          article_path(x.id) %>
+                    <h4 id="article_h4">
+                        <p id="title_p"><%= link_to x.title, article_path(x.id),
+                                            class: "label label-info" %></p>
+                    </h4>
+                    <p id="article_p"><%= truncate(x.text, :length => 145) %></p>
+                </div>    
+            </div> 
+            <!-- break out of block when article count reaches 6 -->
+            <% break_int += 1 %>
+            <% break if break_int == 6 %>
+        <% end %>
+    </div>
+</div>
+<div class="container"> 
+    <div class="row">
+        <div class="col col-md-4">
+            <div class="thumbnail">
+                <h1>test</h1>
+            </div>
+        </div>
+    </div>
+</div>
