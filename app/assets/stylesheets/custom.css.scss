@@ -51,7 +51,22 @@ p {
 
 
 /* header */
-#logo, .article_title, .article_title a:hover, .article_title a:active, .article_title a:visited  {
+#logo {
+    text-decoration: none;
+    float: left;
+    margin-right: 10px;
+    font-size: 1.7em;
+    color: #f99f1a;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
+      &:hover {
+        color: #535555;
+        text-decoration: none;
+  }
+}
+
+.article_title, .article_title a:hover, .article_title a:active, .article_title a:visited {
     text-decoration: none;
     float: left;
     margin-right: 10px;

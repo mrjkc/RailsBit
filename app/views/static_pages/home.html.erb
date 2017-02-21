@@ -1,7 +1,7 @@
 <% provide(:title, 'Home') %>
 <div class="center container" id="header_title">
     <div class="row">
-        <h4 id="daily_quote_title">Daily Quote:</h4>
+        <h4 id="daily_quote_title">Daily Blog Post:</h4>
         <h3 id="daily_quote">"Welcome to RailsBit, here you can find everything 
                               about Railsy web development"
         </h3>
@@ -31,11 +31,13 @@
             <div class="col-xs col-sm-4 col-md nopadding">
                 <div class="thumbnail">
                     <% if x.picture? %>
-                        <%= link_to image_tag(x.picture.url, size: "400x400"),
-                                              article_path(x.id)  %>
+                        <%= link_to image_tag(x.picture.url, size: "400x400", 
+                                              class: "gravatar"),
+                                              article_path(x.id) %>
                     <% else %>
-                        <%= link_to image_tag("ruby.png", size: "400x400"),
-                                          article_path(x.id)  %>
+                        <%= link_to image_tag("ruby.png", size: "400x400", 
+                                              class: "gravatar"),
+                                              article_path(x.id)  %>
                     <% end %>                      
                     <h4 id="article_h4">
                         <p id="title_p"><%= link_to x.title, article_path(x.id),
