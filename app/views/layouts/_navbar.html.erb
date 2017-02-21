@@ -6,11 +6,12 @@
             <ul class="nav navbar-nav">
                 <li class="dropdown">
                     <a href='#' class="dropdown-toggle" data-toggle="dropdown" id="links">
-                        It's Never Too Late
+                        Front End
                     </a>
                     <ul class="dropdown-menu">
-                        <li><%= link_to "Am I too old to Lear?", '#', id: 'links_sub' %></li>
-                        <li><%= link_to "Am I too old to Lear?", '#', id: 'links_sub' %></li>
+                        <li><%= link_to "HTML",       '#', id: 'links_sub' %></li>
+                        <li><%= link_to "CSS",        '#', id: 'links_sub' %></li>
+                        <li><%= link_to "JavaScript", '#', id: 'links_sub' %></li>
                     </ul>
                 </li>
                 
@@ -19,8 +20,19 @@
                         Learn Rails
                     </a>
                     <ul class="dropdown-menu">
-                        <li><%= link_to "Am I too old to Lear?", '#', id: 'links_sub' %></li>
-                        <li><%= link_to "Am I too old to Lear?", '#', id: 'links_sub' %></li>
+                        <li><%= link_to "Articles", articles_path, id: 'links_sub' %></li>
+                        <li><%= link_to "Videos",     '#',         id: 'links_sub' %></li>
+                        <li><%= link_to "Tips",       '#',         id: 'links_sub' %></li>
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href='#' class="dropdown-toggle" data-toggle="dropdown" id="links">
+                        My Story
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><%= link_to "My Story", '#', id: 'links_sub' %></li>
+                        <li><%= link_to "Vlog",     '#', id: 'links_sub' %></li>
                     </ul>
                 </li>
                 

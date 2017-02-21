@@ -51,7 +51,8 @@ p {
 
 
 /* header */
-#logo {
+#logo, .article_title, .article_title a:hover, .article_title a:active, .article_title a:visited  {
+    text-decoration: none;
     float: left;
     margin-right: 10px;
     font-size: 1.7em;
@@ -80,7 +81,7 @@ p {
 }
 
 #links_sub {
-  color: #fb2f2f;
+  color: black;
   font-weight: bold;
 }
 
@@ -91,6 +92,15 @@ p {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; */
+}
+
+#titles {
+  text-decoration: none;
+  color: black;
+  font-size: 2em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 #title_p {
@@ -113,13 +123,50 @@ p {
 #header_title {
   font-family: "Arial";
   background-color: #fbf6ee;
-  color: black;
+  color: white;
   width: 100%; //fallback
   width: 100vw;
   height: 150px;
+  background-image: url('cover.png');
+}
+
+#daily_quote {
+  font-style: italic;
+}
+
+#daily_quote_title {
+  font-weight: bold;
 }
 
 /* Custom Bootstrap */
+
+div {
+  text-align: justify;
+}
+
+div:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
+.link-to-text-color {
+  text-decoration: none;
+  color: black;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+  &:hover {
+    text-decoration: none;
+    color: #708090;
+  }
+}
+
+iframe {
+  padding: 0.5px;
+}
 
 #thumbnails {
   padding: 0px;
@@ -178,7 +225,16 @@ footer ul li {
   width: 80px;
 }
 
+footer .container {
+  height: 200px;
+  background-color: black;
+}
 
 
 
+/* image styling */
+
+.picture {
+  padding: 10px;
+}
 

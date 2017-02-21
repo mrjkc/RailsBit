@@ -32,11 +32,28 @@ class ArticlesController < ApplicationController
         end
     end
     
+    def edit
+      @article = Article.find(params[:id])  
+    end
+    
+    def update
+        @article = Article.find(params[:id])
+        respond_to do |format|
+            if @article.update(article_params)
+                format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+                format.json { render :show, status: :ok, location: @article }
+            else
+                format.html { render :edit }
+                format.json { render json: @article.errors, status: :unprocessable_entoty }
+            end    
+        end
+    end
+    
     private 
     
     def article_params
         params.require(:article).permit(:title, :text, :liked, :author_name,
-                                  :image_link)
+                                  :image_link, :picture)
     end
     
     def video_params

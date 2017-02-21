@@ -1,7 +1,10 @@
 <% provide(:title, 'Home') %>
 <div class="center container" id="header_title">
     <div class="row">
-        <h3>Welcome to RailsBit, here you can find everything about Railsy web development</h3>
+        <h4 id="daily_quote_title">Daily Quote:</h4>
+        <h3 id="daily_quote">"Welcome to RailsBit, here you can find everything 
+                              about Railsy web development"
+        </h3>
     </div>    
 </div>
 <div class="jumbotron">
@@ -19,15 +22,21 @@
 <!-- Display Articles -->
 
 <!-- iteration count variable -->
-<% break_int = 0 %>
+<% break_int   = 0 %>
+<% break_video = 0 %>
 
 <div class="container">
-    <div class="row row-sm-2">
+    <div class="row">
         <%= @articles.find_each do |x| %>
             <div class="col-xs col-sm-4 col-md nopadding">
                 <div class="thumbnail">
-                    <%= link_to image_tag("cage.png", size: "400x400"),
-                                          article_path(x.id) %>
+                    <% if x.picture? %>
+                        <%= link_to image_tag(x.picture.url, size: "400x400"),
+                                              article_path(x.id)  %>
+                    <% else %>
+                        <%= link_to image_tag("ruby.png", size: "400x400"),
+                                          article_path(x.id)  %>
+                    <% end %>                      
                     <h4 id="article_h4">
                         <p id="title_p"><%= link_to x.title, article_path(x.id),
                                             class: "label label-info" %></p>
@@ -47,10 +56,12 @@
         <%= @videos.find_each do |x| %>
             <div class="col col-md-4">
                 <% puts "#{x.link}" %>
-                <iframe width="400" height="300" 
+                <iframe width="380" height="300" 
                     src=<%= "https://www.youtube.com/embed/#{x.link}" %> frameborder="0" allowfullscreen>
                 </iframe>
             </div>
+            <% break_video += 1 %>
+            <% break if break_video == 6 %>
         <% end %>    
     </div>
 </div>
