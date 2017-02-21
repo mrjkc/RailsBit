@@ -13,29 +13,32 @@
 
 ActiveRecord::Schema.define(version: 20170221051014) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "articles", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "text",        limit: 65535
+    t.string   "title"
+    t.text     "text"
     t.boolean  "liked"
-    t.string   "author_name", limit: 255
-    t.string   "image_link",  limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.string   "picture",     limit: 255
+    t.string   "author_name"
+    t.string   "image_link"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "picture"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "email",      limit: 255
-    t.string   "role",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name"
+    t.string   "email"
+    t.string   "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "videos", force: :cascade do |t|
-    t.string   "link",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
