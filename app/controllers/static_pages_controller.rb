@@ -7,5 +7,6 @@ class StaticPagesController < ApplicationController
     
     def backend
         @articles = Article.all
+        @videos = Video.all
     end
 end

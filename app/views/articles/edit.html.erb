@@ -4,28 +4,28 @@
         <div class="well col-xs col-sm-5 col-md nopadding">
             <%= form_for(@article, html: { multipart: true }) do |x| %>
             
-                <h4><%= x.label "Article Title" %></h4>
-                <p><%= x.text_field :title, size: "20x5" %></p>
+                <h4><%= x.label "Article Title", style: "color:black" %></h4>
+                <p><%= x.text_field :title, size: "20x5", style: "color:black" %></p>
                 
-                <h4><%= x.label "Author Name" %></h4>
-                <p><%= x.text_field :author_name, size: "20x5" %></p>
+                <h4><%= x.label "Author Name", style: "color:black" %></h4>
+                <p><%= x.text_field :author_name, size: "20x5", style: "color:black" %></p>
                 
-                <h4><%= x.label "Article" %></h4>
-                <p><%= x.text_area :text, size: "57x20" %></p>
+                <h4><%= x.label "Article", style: "color:black" %></h4>
+                <p><%= x.text_area :text, size: "57x20", style: "color:black" %></p>
                 
                 <span class="picture">
                      <%= x.file_field :picture, accept: 'image/jpeg, image/gif, image/png' %>
                 </span>
                 
-                <%= x.submit 'Upload Article', class: "btn btn-md btn-primary" %>
+                <%= x.submit 'Save Changes', class: "btn btn-md btn-primary" %>
                 
             <% end %>
         </div>
         <div class="well col-xs col-sm-5 col-md nopadding">
             <%= form_for :video do |x| %>
             
-                <h4><%= x.label "Add video Link" %></h4>
-                <p><%= x.text_field :link, size: "20x5" %></p>
+                <h4><%= x.label "Add video Link", style: "color:black" %></h4>
+                <p><%= x.text_field :link, size: "20x5", style: "color:black" %></p>
                 
                 <%= x.submit 'Add Video', class: "btn btn-sm btn-primary" %>
             

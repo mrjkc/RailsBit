@@ -1,6 +1,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* sass mixins */ 
+
+@mixin app-font {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+	  font-style: normal;
+	  font-variant: normal;
+}
+
 /* universal */
 
 html {
@@ -24,8 +32,9 @@ textarea {
 
 
 /* typography */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, b {
     line-height: 1;
+    color: white;
 }
 
 h1 {
@@ -33,6 +42,7 @@ h1 {
     letter-spacing: -2px;
     margin-bottom: 30px;
     text-align: center;
+    @include app-font;
 }
 
 h2 {
@@ -42,11 +52,14 @@ h2 {
     text-align: center;
     font-weight: normal;
     color: #777;
+    @include app-font;
 }
 
 p {
     font-size: 1.1em;
     line-height: 1.7em;
+    @include app-font;
+    color: white;
 }
 
 
@@ -58,10 +71,12 @@ p {
     font-size: 1.7em;
     color: #f99f1a;
     letter-spacing: -1px;
-    padding-top: 9px;
-    font-weight: bold;
+    @include app-font;
+    line-height: 50px;
+    font-weight: bolder;
+    font-size: 30px;
       &:hover {
-        color: #535555;
+        color: #d8d8d8;
         text-decoration: none;
   }
 }
@@ -71,23 +86,36 @@ p {
     /*-webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: #fff; */
     color: white;
-    font-weight: bold;
     background-color: transparent;
+    @include app-font;
+    font-size: 20px;
     &:hover {
         /*color: #fb2f2f;*/
         color: #d8d8d8;
-        text-decoration: none;
+        text-decoration-line: none;
   }
 }
 
 #links_sub {
-  color: black;
-  font-weight: bold;
+  color: white;
+  @include app-font;
+  font-size: 20px;
+  background-color: #f99f1a;
+  &:hover {
+        /*color: #fb2f2f;*/
+        background-color: #686868;
+        color: white;
+        text-decoration: none;
+  }
 }
 
 /* Article styles */
 
 #article_p {
+    color: white;
+    padding: 5px;
+    border: solid white 1px;
+    @include app-font;
     /* truncates display text in css
     white-space: nowrap;
     overflow: hidden;
@@ -96,23 +124,56 @@ p {
 
 #titles {
   text-decoration: none;
-  color: black;
+  color: white;
   font-size: 2em;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  @include app-font;
 }
 
 #title_p {
-  padding-left: 6px;
-  padding-top: 6px;
+  padding-top: 3px;
   font-weight: bold;
-  width: auto;
+  color: white;
+  @include app-font;
+    &:hover {
+      text-decoration: none;
+    }
+}
+
+#image, #image div.container {
+	border: 5px solid black;
+	border-radius: 150px;
+	overflow: hidden;
+	width: 100%;
+  background-color: #f99f1a;
+  @include app-font;
+    &:hover {
+      text-decoration: none;
+    }
+}
+
+#video, #video div.container {
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #f99f1a;
+  padding: 0px;
+}
+
+#image div.left {
+	width: 45%;
+	float: left;
+}
+
+#image div.right {
+	width: 45%;
+	float: right;
 }
 
 #article_h4 {
   border-bottom: 2px solid black;
-  background-color: black;
+  background-color: white;
 }
 
 #article_ul {
@@ -121,21 +182,37 @@ p {
 } 
 
 #header_title {
-  font-family: "Arial";
-  background-color: #fbf6ee;
-  color: white;
-  width: 100%; //fallback
-  width: 100vw;
-  height: 150px;
-  background-image: url('cover.png');
+  font-size: 30px;
+  background-color: #fafafa;
+  color: white;//fallback
+  @include app-font;
+  /*background-image: url("ggg.jpg");*/
+}
+
+#white-line {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 20px;
 }
 
 #daily_quote {
+  color: white;
   font-style: italic;
+  font-size: 30px;
+  @include app-font;
 }
 
 #daily_quote_title {
+  color: white;
   font-weight: bold;
+  font-size: 20px;
+  @include app-font;
+}
+
+#signature {
+  color: white;
+  font-size: 15px;
+  @include app-font;
 }
 
 /* Custom Bootstrap */
@@ -158,6 +235,7 @@ div:after {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  @include app-font;
   &:hover {
     text-decoration: none;
     color: #708090;
@@ -168,67 +246,35 @@ iframe {
   padding: 0.5px;
 }
 
-#thumbnails {
-  padding: 0px;
-}
-
 .nopadding {
    padding: 0.5px !important;
    margin: 0 !important;
 }
 
 .jumbotron {
+  border-top: 6px solid #1A252A;
   background-color: black;
   color: white;
   text-align: center;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
 }
 
 body {
-  padding-top: 55px;
-  background-color: white;
+  padding-top: 56px;
+  background-color: black;
 }
 
 /* footer */
 
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
-}
-
-footer a {
-  color: gray;
-}
-
-footer a:hover {
-  color: gray;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 15px;
-}
-
-.btn.sharp {
-  border-radius:20px;
-  width: 80px;
-}
-
-footer .container {
-  height: 200px;
+#footer-style  {
   background-color: black;
+  color: white;
+  list-style: none;
+  @include app-font;
+  font-size: 26px;
 }
+
+
 
 
 
@@ -237,4 +283,37 @@ footer .container {
 .picture {
   padding: 10px;
 }
+
+/* nav styles */
+
+#page_navbar {
+  border-bottom: 1px solid white;
+}
+
+/* dropdown styles */
+
+.dropdown-menu {
+  background-color: black;
+}
+
+/* button styles */
+
+.btn {
+  border-radius: 25px;
+  border: 1px solid black;
+}
+
+/* admin panel */
+
+#admin-panel {
+  color: black;
+}
+
+/* **************
+*****************
+backend styles 
+*****************
+****************/
+
+
 

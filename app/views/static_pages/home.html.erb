@@ -1,12 +1,16 @@
 <% provide(:title, 'Home') %>
-<div class="center container" id="header_title">
+<!-- Header daily quote -->
+<div class="container" id="white-line">
     <div class="row">
-        <h4 id="daily_quote_title">Daily Quote:</h4>
-        <h3 id="daily_quote">"Welcome to RailsBit, here you can find everything 
-                              about Railsy web development"
-        </h3>
+        <div id="header-title">
+            <b id="daily_quote_title">Daily Quote:</b>
+            <p id="daily_quote" class="center">“I can accept failure. 
+               Everyone fails at something. But I can’t accept not trying.”</p>
+            <b id="signature">-Michael Jordan</b>
+        </div>
     </div>    
 </div>
+<!-- switch between front end and backend -->
 <div class="jumbotron">
     <h4>Everything About (Railsy) Web Development.</h4> 
     <div class="btn-group">
@@ -14,54 +18,92 @@
     <%= link_to "Back End"  , backend_path, class: "btn btn-sm btn-danger sharp" %>
     </div>
 </div>
+
+<!-- Welcome video -->
+<div class="container">
+    <div class="row">
+        <div id="header-title">
+            <iframe width="100%" height="700"
+                src=<%= "https://www.youtube.com/embed/0NjkfHbK6BE" %> frameborder="0" allowfullscreen>
+            </iframe>
+        </div>
+    </div>    
+</div>
+
 <div class="container">
     <div class="row">
         <h1>Articles</h1>
     </div>    
 </div>
-<!-- Display Articles -->
 
 <!-- iteration count variable -->
-<% break_int   = 0 %>
-<% break_video = 0 %>
-
+    <% break_int   = 0 %>
+    <% break_video = 0 %>
+<!-- Display Articles -->
 <div class="container">
     <div class="row">
         <%= @articles.find_each do |x| %>
-            <div class="col-xs col-sm-4 col-md nopadding">
-                <div class="thumbnail">
+            <div class="col col-sm-4 col-md nopadding">
+                <div id="image" class="center">
                     <% if x.picture? %>
-                        <%= link_to image_tag(x.picture.url, size: "400x400"),
+                        <%= link_to image_tag(x.picture.url, size: "400x300", class: "gravatar"),
                                               article_path(x.id)  %>
                     <% else %>
-                        <%= link_to image_tag("ruby.png", size: "400x400"),
+                        <%= link_to image_tag("ruby.png", size: "400x300", class: "gravatar"),
                                           article_path(x.id)  %>
                     <% end %>                      
-                    <h4 id="article_h4">
-                        <p id="title_p"><%= link_to x.title, article_path(x.id),
-                                            class: "label label-info" %></p>
-                    </h4>
-                    <p id="article_p"><%= truncate(x.text, :length => 145) %></p>
-                </div>    
+                        <h4><%= link_to x.title, article_path(x.id), id: "title_p" %></h4>
+                        <!--<%= truncate(x.text, :length => 145) %> -->
+                </div>
             </div> 
             <!-- break out of block when article count reaches 6 -->
             <% break_int += 1 %>
             <% break if break_int == 6 %>
         <% end %>
+        <div class="center">
+            <%= link_to "Show More Articles", articles_path, class: "btn btn-md btn-default" %>
+        </div>
     </div>
 </div>
+<!-- Display videos -->
 <div class="container"> 
     <div class="row">
         <h1>Videos</h1>
         <%= @videos.find_each do |x| %>
-            <div class="col col-md-4">
-                <% puts "#{x.link}" %>
-                <iframe width="380" height="300" 
-                    src=<%= "https://www.youtube.com/embed/#{x.link}" %> frameborder="0" allowfullscreen>
-                </iframe>
+            <div class="col col-sm-4 col-md">
+                <div id="video" class="center">
+                    <% puts "#{x.link}" %>
+                    <iframe width="380" height="300" id="video"
+                        src=<%= "https://www.youtube.com/embed/#{x.link}" %> frameborder="0" allowfullscreen>
+                    </iframe>
+                    <h4>Stick Your Video Here <!-- add id=""title_p" when you will have embeded ruby --></h4>
+                </div>
             </div>
             <% break_video += 1 %>
             <% break if break_video == 6 %>
-        <% end %>    
+        <% end %> 
+        <div class="center">
+            <%= link_to "Show More Videos", videos_path, class: "btn btn-md btn-default" %>
+        </div>
     </div>
 </div>
+<!-- subscription form, pure bootstrap -->
+<section>
+    <div class="well">
+        <div class="container text-center">
+          <h2>Subscribe</h2>  
+          <p style="color: black">Enter Your Name and Email</p>
+          <form action="" class="form-inline">
+              <div class="form-group">
+                  <label for="subscription">Subscribe</label>
+                  <input type="text" class="form-control" id="subscription" placeholder="Your Name">
+              </div>
+              <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="text" class="form-control" id="email" placeholder="Email">
+              </div>
+              <button type="submit" class="btn btn-default">Subscribe</button>
+          </form>
+        </div>
+    </div>
+</section>

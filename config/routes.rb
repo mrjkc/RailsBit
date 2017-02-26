@@ -11,14 +11,16 @@ Rails.application.routes.draw do
   get "users"    => 'users#show'
   get "resume"   => 'resume#show'
   get "backend"  => 'static_pages#backend'
+  get "videos"   => 'videos#show'
   
   # Forms routes
   
   get "users/new"    => 'users#new'
+  get "admin"        => 'articles#new'
   
   # Create actions
   
-  post "articles/new" => 'articles#new_link'
+  post "admin" => 'articles#new_link'
   resources :articles
 
   # Example of regular route:
