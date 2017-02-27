@@ -15,13 +15,14 @@ Rails.application.routes.draw do
   
   # Forms routes
   
-  get "users/new"    => 'users#new'
-  get "admin"        => 'articles#new'
+  get "signup"   => 'users#new'
+  get "admin"    => 'articles#new'
   
   # Create actions
   
   post "admin" => 'articles#new_link'
   resources :articles
+  resources :users
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
