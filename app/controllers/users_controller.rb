@@ -11,6 +11,7 @@ class UsersController < ApplicationController
        @user = User.new(user_params) 
        if @user.save
            # do shit
+           log_in @user
            flash[:success] = "Welcome to RailsBit.com"
            redirect_to @user
        else
