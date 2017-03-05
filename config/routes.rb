@@ -10,24 +10,25 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   
   #Show routes
-  
-  get "users"    => 'users#show'
   get "resume"   => 'resume#show'
   get "backend"  => 'static_pages#backend'
   get "videos"   => 'videos#show'
   
   # Forms routes
   
-  get "signup"   => 'users#new'
-  get "admin"    => 'articles#new'
-  get "login"    => 'sessions#new'
+  get "signup"     => 'users#new'
+  get "login"      => 'sessions#new'
+  get "adminpanel" => 'articles#new'
   
   # Create actions
   
-  post "admin" => 'articles#new_link'
+  post "adminpanel" => 'articles#new_link'
   post "login" => 'sessions#create'
-  resources :articles
+  resources :articles, :except => [:new]
   resources :users
+  resources :quotes
+  
+  # Edit actions
   
   # Destroy actions
   

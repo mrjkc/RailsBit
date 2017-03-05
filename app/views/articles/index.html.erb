@@ -1,18 +1,26 @@
+<%= provide(:title, 'Articles') %>
 <div class="container">
     <div ="row">
-        <div class="col">
-            <%= @articles.find_each do |x| %>
-                    <%= link_to image_tag(x.picture.url , size: "100x100"),
-                                          article_path(x.id) if x.picture? %>
-                </h4>                          
-                    <a><%= link_to x.title, article_path(x.id), class: "article_title" %></a>
-                </h4>
-                <p><%= x.text %></p>
-                <b><%= "Author: #{x.author_name}" %></b>
-                <a><%= x.liked %></a>
-                <hr>
-                    
-            <% end %>
-        </div>
+        <%= @articles.find_each do |x| %>
+            <div class="col col-sm-4 col-md nopadding">
+                <section>
+                    <% if x.picture? %>
+                        <h4 class="article_title"><%= link_to x.title, article_path(x.id) %></h4>
+                        <img><%= link_to image_tag(x.picture.url , size: "400x400"),
+                                 article_path(x.id) %></img>
+                    <% else %>
+                         <h4 class="article_title"><%= link_to x.title, article_path(x.id) %></h4>
+                        <img><%= link_to image_tag("image.png" , size: "400x400"),
+                        article_path(x.id) %></img>
+                    <% end %>    
+                     <!--<p id="article_p">  
+                        <%= x.text %>
+                    </p>-->
+                  
+                    <%= "Author: #{x.author_name}" %>
+                    <%= x.liked %>
+                </section>
+            </div>    
+        <% end %>
     </div>
 </div>

@@ -1,7 +1,7 @@
 <% provide(:title, 'Article') %>
 <div class="container">
-   <h4><%= @article.title %></h4>
-    <p><%= @article.text %></p>
-    <%= image_tag(@article.picture.url, size: "200x200", class: "gravatar") if @article.picture? %>
+   <h4 class="article_title"><%= @article.title %></h4>
+    <p id="article_p"><%= @article.text %></p>
+    <img><%= image_tag(@article.picture.url, size: "400x300", class: "gravatar") if @article.picture? %></img>
     <%= link_to "Edit", edit_article_path, class: "btn btn-sm btn-primary" %>
 </div>

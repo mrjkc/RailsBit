@@ -15,6 +15,10 @@
   box-sizing: border-box;
 }
 
+@mixin article-font {
+  font-family: "Gerogia", serif;
+}
+
 /* universal */
 
 html {
@@ -70,7 +74,7 @@ p {
 
 
 /* header */
-#logo, .article_title, .article_title a:hover, .article_title a:active, .article_title a:visited  {
+#logo, .article_title, .article_title a:hover, .article_title a:active, .article_title a:visited {
     text-decoration: none;
     float: left;
     margin-right: 10px;
@@ -117,11 +121,24 @@ p {
 
 /* Article styles */
 
-#article_p {
-    color: white;
+#article_body {
+    background-color: white;
+}
+
+#floated {
+    float: left;
     padding: 5px;
-    border: solid white 1px;
-    @include app-font;
+    @include article-font;
+    font-size: 18pt;
+    background-color: white;
+}
+
+#article_p {
+    color: black;
+    padding: 5px;
+    @include article-font;
+    font-size: 18pt;
+    background-color: white;
     /* truncates display text in css
     white-space: nowrap;
     overflow: hidden;
@@ -159,6 +176,7 @@ p {
       text-decoration: none;
     }
 }
+
 
 #video, #video div.container {
   border-radius: 5px;
@@ -321,6 +339,18 @@ body {
 
 #admin-panel {
   color: black;
+}
+
+/* users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
 }
 
 /* sidebar */

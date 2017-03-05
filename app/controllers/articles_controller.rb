@@ -10,10 +10,18 @@ class ArticlesController < ApplicationController
     
     def new_link
         @video = Video.new(video_params)
+        @quote = Quote.new(quote_params) 
         if @video.save
             flash[:success] = "Youtube Video Link Added!"
             redirect_to '/articles/new'
         else 
+            render 'new'
+        end
+
+        if @quote.save 
+            flash[:success] = "Quote Successfully Added"
+        else
+            flash[:danger] = "Error: Daily Quote not added"
             render 'new'
         end
     end
@@ -49,6 +57,20 @@ class ArticlesController < ApplicationController
         end
     end
     
+    def add_quote
+      @quote = Quote.new(quote_params) 
+      if @quote.save 
+          flash[:success] = "Quote Successfully Added"
+      else
+          flash[:danger] = "Error: Daily Quote not added"
+          render 'new'
+      end
+    end
+    
+    def edit_quote
+        
+    end
+    
     private 
     
     def article_params
@@ -58,6 +80,10 @@ class ArticlesController < ApplicationController
     
     def video_params
         params.require(:video).permit(:link)
+    end
+    
+    def quote_params
+       params.require(:quote).permit(:quote, :author) 
     end
     
 end

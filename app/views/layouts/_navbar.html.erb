@@ -51,14 +51,15 @@
             </ul>
             <% if logged_in? %>
                 <ul class="nav navbar-nav navbar-right">
+                    <li id="links"><%= link_to "Users", users_path %></li>
                     <li class="dropdown">
                         <a href='#' class="dropdown-toggle" 
                            data-toggle="dropdown" id="links">
                             Account
                         </a>
                         <ul class="dropdown-menu">
-                            <li><%= link_to "Profile", current_user, id: 'links_sub' %></li>
-                            <li><%= link_to "Settings", '#',         id: 'links_sub' %></li>
+                            <li><%= link_to "Profile",  current_user,   id: 'links_sub' %></li>
+                            <li><%= link_to "Settings", edit_user_path(:id), id: 'links_sub' %></li>
                             <li class="divider"></li>
                             <li>
                                 <%= link_to "Log out", logout_path, method: "delete", id: 'links_sub' %>
