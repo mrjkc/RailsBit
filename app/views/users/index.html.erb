@@ -1,6 +1,6 @@
 <% provide(:title, 'All users') %>
 <h1>All users</h1>
-
+<div class="container">
 <%= will_paginate %>
 
     <ul class="users">
@@ -8,3 +8,11 @@
     </ul>
 
 <%= will_paginate %>
+</div>
+<script>
+    $('document').ready(function() {
+      setTimeout(function() {
+    $('#flash').slideUp();
+      }, 3000);
+        });
+</script>

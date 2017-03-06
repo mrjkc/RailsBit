@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   # Destroy actions
   
   delete 'logout' => 'sessions#destroy'
+  delete 'videos/:id' => 'videos#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

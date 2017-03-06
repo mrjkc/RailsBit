@@ -1,4 +1,5 @@
 
+<% if logged_in? && current_user.admin?%>
 <div class="container" id="admin-panel">
     <div class="row">
         <div class="well col-xs col-sm-5 col-md nopadding">
@@ -47,7 +48,7 @@
         </div>
     </div>    
 </div>
-
+<% end %>
 <script type="text/javascript">
     $('#article_picture').bind('change', function() {
         size_in_megabytes = this.files[0].size/1024/1024;

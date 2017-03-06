@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+    before_action :admin_user, only: [:destroy, :edit, :create, :new, :new_link]
     
     def show
         @article = Article.find(params[:id])
@@ -57,6 +58,12 @@ class ArticlesController < ApplicationController
         end
     end
     
+    def destroy
+       Article.find(params[:id]).destroy
+       flash[:success] = "Article deleted successfully"
+       redirect_to articles_url
+    end
+    
     def add_quote
       @quote = Quote.new(quote_params) 
       if @quote.save 
@@ -84,6 +91,10 @@ class ArticlesController < ApplicationController
     
     def quote_params
        params.require(:quote).permit(:quote, :author) 
+    end
+    
+    def admin_user
+        redirect_to(root_url) unless current_user.admin?
     end
     
 end

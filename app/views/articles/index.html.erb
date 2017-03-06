@@ -1,25 +1,29 @@
 <%= provide(:title, 'Articles') %>
 <div class="container">
-    <div ="row">
+    <div class="row">
         <%= @articles.find_each do |x| %>
-            <div class="col col-sm-4 col-md nopadding">
-                <section>
+            <div class="col col-sm-3 nopadding center">
+                <div id="articles">
                     <% if x.picture? %>
-                        <h4 class="article_title"><%= link_to x.title, article_path(x.id) %></h4>
-                        <img><%= link_to image_tag(x.picture.url , size: "400x400"),
+                        <img><%= link_to image_tag(x.picture.url , size: "280x200"),
                                  article_path(x.id) %></img>
                     <% else %>
-                         <h4 class="article_title"><%= link_to x.title, article_path(x.id) %></h4>
-                        <img><%= link_to image_tag("image.png" , size: "400x400"),
+                        <img><%= link_to image_tag("image.png" , size: "280x200"),
                         article_path(x.id) %></img>
                     <% end %>    
                      <!--<p id="article_p">  
                         <%= x.text %>
                     </p>-->
-                  
-                    <%= "Author: #{x.author_name}" %>
-                    <%= x.liked %>
-                </section>
+                    <div class="container center">
+                        <h4><%= link_to x.title, article_path(x.id), class: "article_title" %></h4>
+                        <h4><%= "Author: #{x.author_name}" %></h4>
+                        <a><%= x.liked %></a>
+                    </div>
+                    <% if logged_in? && current_user.admin? %>
+                        <%= link_to "Delete", x, method: :delete, data: { confirm: "Are You Sure?" },
+                            class: "btn btn-sm btn-danger" %>
+                    <% end %>    
+                </div>    
             </div>    
         <% end %>
     </div>

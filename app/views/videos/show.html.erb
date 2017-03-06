@@ -10,6 +10,10 @@
                     </iframe>
                     <h4>Stick Your Video Here <!-- add id=""title_p" when you will have embeded ruby --></h4>
                 </div>
+                <% if logged_in? && current_user.admin? %>
+                    <%= link_to "Delete", { :controller => :videos, :action => 'destroy', :id => x.id } , method: :delete, 
+                        data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-danger" %>
+                <% end %>    
             </div>
         <% end %> 
     </div>

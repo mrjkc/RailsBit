@@ -74,7 +74,8 @@ p {
 
 
 /* header */
-#logo, .article_title, .article_title a:hover, .article_title a:active, .article_title a:visited {
+#logo, .article_title, .article_title a:hover, .article_title a:active, 
+  .article_title a:visited {
     text-decoration: none;
     float: left;
     margin-right: 10px;
@@ -84,8 +85,9 @@ p {
     @include app-font;
     line-height: 50px;
     font-weight: bolder;
-    font-size: 30px;
+    padding: 5px;
       &:hover {
+        font-size: 1.7em;
         color: #d8d8d8;
         text-decoration: none;
   }
@@ -99,6 +101,7 @@ p {
     background-color: transparent;
     @include app-font;
     font-size: 20px;
+    line-height: 30px;
     &:hover {
         /*color: #fb2f2f;*/
         color: #d8d8d8;
@@ -107,7 +110,7 @@ p {
 }
 
 #links_sub {
-  color: white;
+  color: black;
   @include app-font;
   font-size: 20px;
   background-color: #f99f1a;
@@ -121,6 +124,18 @@ p {
 
 /* Article styles */
 
+.top_padding {
+  padding-top:15px;
+}
+
+#articles {
+	overflow: hidden;
+	width: 100%;
+  @include app-font;
+    &:hover {
+      text-decoration: none;
+    }
+}
 #article_body {
     background-color: white;
 }
@@ -139,6 +154,9 @@ p {
     @include article-font;
     font-size: 18pt;
     background-color: white;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
     /* truncates display text in css
     white-space: nowrap;
     overflow: hidden;
