@@ -9,11 +9,17 @@
             <%= link_to "Edit", edit_article_path, class: "btn btn-sm btn-primary" %>
         <% end %>
         </div>
-        <div class="col col-sm-3">
-            <h4>Testting layouts bla bla bla bla bla blabla bla bla bla bla bla
-            bla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla
-            bla bla bla bla bla bla
-            bla bla bla bla bla blabla bla bla blablabla bla bla bla bla bla</h4>
+        <div class="col col-sm-3 center">
+            <h4>Latest Videos</h4>
+            <% @videos.find_each do |x| %>
+                <div>
+                    <frame scrolling="auto">
+                    <iframe width="300" height="200" id="video"
+                            src=<%= "https://www.youtube.com/embed/#{x.link}" %> frameborder="0" allowfullscreen>
+                    </iframe>
+                    </frame>
+                </div>
+            <% end %>    
         </div>
     </div>
 </div>

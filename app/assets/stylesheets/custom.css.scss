@@ -83,7 +83,7 @@ p {
     color: #f99f1a;
     letter-spacing: -1px;
     @include app-font;
-    line-height: 50px;
+    line-height: 40px;
     font-weight: bolder;
     padding: 5px;
       &:hover {
@@ -93,15 +93,32 @@ p {
   }
 }
 
+#footer_logo {
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 2.7em;
+    color: #f99f1a;
+    letter-spacing: -1px;
+    @include app-font;
+    line-height: 40px;
+    font-weight: bolder;
+    padding: 5px;
+      &:hover {
+        color: #d8d8d8;
+        text-decoration: none;
+  }
+}
+
+
 #links {
     /*text-shadow: 0px 0 white, 0 0px white, 0px 0 white, 0 0px white;*/
     /*-webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: #fff; */
     color: white;
-    background-color: transparent;
+    /*background-color: black;*/
     @include app-font;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 20px;
     &:hover {
         /*color: #fb2f2f;*/
         color: #d8d8d8;
@@ -321,7 +338,7 @@ body {
   color: white;
   list-style: none;
   @include app-font;
-  font-size: 26px;
+  font-size: 18px;
 }
 
 
@@ -338,8 +355,14 @@ body {
 
 #page_navbar {
   border-bottom: 1px solid white;
+  height: 30px;
 }
 
+#navbar-collapse {
+  /*background-color: #222;*/
+}
+
+  
 /* dropdown styles */
 
 .dropdown-menu {

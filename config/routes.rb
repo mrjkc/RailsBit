@@ -10,9 +10,14 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   
   #Show routes
-  get "resume"   => 'resume#show'
-  get "backend"  => 'static_pages#backend'
-  get "videos"   => 'videos#show'
+  get "resume"     => 'resume#show'
+  get "backend"    => 'static_pages#backend'
+  get "videos"     => 'videos#show'
+  get 'learn_html' => 'learn#html'
+  get 'learn_css'  => 'learn#css'
+  get 'learn_javascript' => 'learn#javascript'
+  get 'learn_rails' => 'learn#rails'
+  get 'userpanel'  =>  'users#panel'
   
   # Forms routes
   

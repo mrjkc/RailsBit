@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
     
     def show
         @article = Article.find(params[:id])
+        @videos = Video.all
     end 
     
     def new
@@ -11,20 +12,20 @@ class ArticlesController < ApplicationController
     
     def new_link
         @video = Video.new(video_params)
-        @quote = Quote.new(quote_params) 
+        #@quote = Quote.new(quote_params) 
         if @video.save
-            flash[:success] = "Youtube Video Link Added!"
+            flash.now[:success] = "Youtube Video Link Added!"
             redirect_to '/articles/new'
         else 
             render 'new'
         end
 
-        if @quote.save 
-            flash[:success] = "Quote Successfully Added"
-        else
-            flash[:danger] = "Error: Daily Quote not added"
-            render 'new'
-        end
+        #if @quote.save 
+        #    flash[:success] = "Quote Successfully Added"
+        #else
+        #    flash[:danger] = "Error: Daily Quote not added"
+        #    render 'new'
+        #end
     end
     
     def index
@@ -64,15 +65,15 @@ class ArticlesController < ApplicationController
        redirect_to articles_url
     end
     
-    def add_quote
-      @quote = Quote.new(quote_params) 
-      if @quote.save 
-          flash[:success] = "Quote Successfully Added"
-      else
-          flash[:danger] = "Error: Daily Quote not added"
-          render 'new'
-      end
-    end
+    #def add_quote
+    #  @quote = Quote.new(quote_params) 
+    #  if @quote.save 
+    #      flash[:success] = "Quote Successfully Added"
+    #  else
+    #      flash[:danger] = "Error: Daily Quote not added"
+    #      render 'new'
+    #  end
+    #end
     
     def edit_quote
         
@@ -94,7 +95,7 @@ class ArticlesController < ApplicationController
     end
     
     def admin_user
-        redirect_to(root_url) unless current_user.admin?
+        redirect_to(root_url) && flash[:danger] = 'forbidden' unless current_user && current_user.admin?
     end
     
 end
