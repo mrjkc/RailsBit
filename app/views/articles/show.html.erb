@@ -1,15 +1,17 @@
 <% provide(:title, 'Article') %>
 <div class="container">
     <div class="row">
-        <div class="col col-sm-9">
+        <div class="col-sm-9">
         <h4 class="article_title"><%= @article.title %></h4>
-        <p id="article_p"><%= @article.text %></p>
-        <img><%= image_tag(@article.picture.url, size: "400x300", class: "gravatar") if @article.picture? %></img>
+        <p id="article_p">
+            <%= @article.text %>
+            <%= image_tag(@article.picture.url, size: "400x300", class: "thumbnail") if @article.picture? %>
+        </p>
         <% if logged_in? && current_user.admin? %>
             <%= link_to "Edit", edit_article_path, class: "btn btn-sm btn-primary" %>
         <% end %>
         </div>
-        <div class="col col-sm-3 center">
+        <div class="col-sm-3 center">
             <h4>Latest Videos</h4>
             <% @videos.find_each do |x| %>
                 <div>

@@ -1,28 +1,26 @@
 <% provide(:title, 'Home') %>
+
 <!-- Header daily quote -->
-<div class="container" id="white-line">
+<div class="container">
     <div class="row">
-        <div id="header-title">
             <b id="daily_quote_title">Daily Quote:</b>
-            <p id="daily_quote" class="center">“I can accept failure. 
-               Everyone fails at something. But I can’t accept not trying.”</p>
-            <b id="signature">-Michael Jordan</b>
-        </div>
-    </div>    
+            <blockquote id="daily_quote" class="center">“<%= @quotes.first.quote %>”</blockquote>
+            <i id="signature"><i>-<%= @quotes.first.author %></i></i>
+    </div>   
 </div>
 <!-- switch between front end and backend -->
 <div class="jumbotron">
-    <h4>Everything About (Railsy) Web Development.</h4> 
-    <div class="btn-group">
-    <%= link_to "Front End", root_path, class: "btn btn-sm btn-default sharp" %>
-    <%= link_to "Back End"  , backend_path, class: "btn btn-sm btn-danger sharp" %>
-    </div>
+    <h2 id="jumbotron-text">Welcome to Railsy Web Development.</h2> 
+    <!--<div class="btn-group">-->
+    <%= link_to "Sign Up Now!", signup_path, class: "btn btn-md btn-default" %>
+    <!--<%= link_to "Back End"  , backend_path, class: "btn btn-sm btn-danger sharp" %> -->
+    <!--</div>-->
 </div>
 
 <!-- Welcome video -->
 <div class="container">
     <div class="row">
-        <div id="header-title">
+        <div>
             <iframe width="100%" height="700"
                 src=<%= "https://www.youtube.com/embed/0NjkfHbK6BE" %> frameborder="0" allowfullscreen>
             </iframe>
@@ -35,9 +33,6 @@
         <h1>Articles</h1>
     </div>    
 </div>
-<script type="text/javascript">
-    
-</script>
 <!-- iteration count variable -->
     <% break_int   = 0 %>
     <% break_video = 0 %>
@@ -45,18 +40,16 @@
 <div class="container">
     <div class="row">
         <%= @articles.find_each do |x| %>
-            <div class="col col-sm-4 col-md nopadding">
-                <div id="image" class="center">
-                    <% if x.picture? %>
-                        <%= link_to image_tag(x.picture.url, size: "400x300", class: "gravatar"),
-                                              article_path(x.id)  %>
-                    <% else %>
-                        <%= link_to image_tag("ruby.png", size: "400x300", class: "gravatar"),
-                                          article_path(x.id)  %>
-                    <% end %>                      
-                        <h4><%= link_to x.title, article_path(x.id), id: "title_p" %></h4>
-                        <!--<%= truncate(x.text, :length => 145) %> -->
-                </div>
+            <div class="col-md-4 col-sm-6 image">
+                <% if x.picture? %>
+                    <img><%= link_to image_tag(x.picture.url),
+                                     article_path(x.id)  %></img>
+                <% else %>
+                    <img><%= link_to image_tag("ruby.png"),
+                                article_path(x.id)  %></img>
+                <% end %>                      
+                    <h4><%= link_to x.title, article_path(x.id), id: "title_p" %></h4>
+                    <!--<%= truncate(x.text, :length => 145) %> -->
             </div> 
             <!-- break out of block when article count reaches 6 -->
             <% break_int += 1 %>
@@ -78,7 +71,7 @@
                     <iframe width="380" height="300" id="video"
                         src=<%= "https://www.youtube.com/embed/#{x.link}" %> frameborder="0" allowfullscreen>
                     </iframe>
-                    <h4>Stick Your Video Here <!-- add id=""title_p" when you will have embeded ruby --></h4>
+                    <h4>Your video goes here <!-- add id=""title_p" when you will have embeded ruby --></h4>
                 </div>
             </div>
             <% break_video += 1 %>
@@ -110,4 +103,16 @@
           </form>
         </div>
     </div>
+<script type="text/javascript">
+/*global $*/
+$(".gravatar").mouseenter(function() {
+    console.log("ENTERED");
+    //$(this).animate({'border': '10px solid white'}, "slow");
+});
+$(".gravatar").mouseleave(function() {
+    console.log("LEFT");
+    //$(this).css("border", "none").fadeOut("slow");
+});
+</script>
+
 <!--</div>-->

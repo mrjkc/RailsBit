@@ -4,7 +4,19 @@
 /* sass mixins */ 
 
 @mixin app-font {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    /*font-family: 'Baloo Bhaina', cursive;*/
+    font-family: 'Nunito', sans-serif;
+    /*font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;*/
+    font-weight:700;
+	  font-style: normal;
+	  font-variant: normal;
+}
+
+@mixin app-font-bold {
+    /*font-family: 'Baloo Bhaina', cursive;*/
+    font-family: 'Nunito', sans-serif;
+    /*font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;*/
+    font-weight:800;
 	  font-style: normal;
 	  font-variant: normal;
 }
@@ -16,7 +28,8 @@
 }
 
 @mixin article-font {
-  font-family: "Gerogia", serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  /*font-family: "Gerogia", serif;*/
 }
 
 /* universal */
@@ -43,8 +56,9 @@ textarea {
 
 /* typography */
 h1, h2, h3, h4, h5, h6, b {
-    line-height: 1;
     color: white;
+    line-height: 1;
+    @include app-font;
 }
 
 h1 {
@@ -55,7 +69,7 @@ h1 {
     @include app-font;
 }
 
-h2 {
+.h2 {
     font-size: 1.2em;
     letter-spacing: -1px;
     margin-bottom: 30px;
@@ -81,13 +95,12 @@ p {
     margin-right: 10px;
     font-size: 1.7em;
     color: #f99f1a;
-    letter-spacing: -1px;
-    @include app-font;
+    letter-spacing: -0.5px;
+    @include app-font-bold;
     line-height: 40px;
-    font-weight: bolder;
     padding: 5px;
       &:hover {
-        font-size: 1.7em;
+        font-size: 2.0em;
         color: #d8d8d8;
         text-decoration: none;
   }
@@ -99,24 +112,26 @@ p {
     font-size: 2.7em;
     color: #f99f1a;
     letter-spacing: -1px;
-    @include app-font;
+    @include app-font-bold;
     line-height: 40px;
-    font-weight: bolder;
     padding: 5px;
       &:hover {
         color: #d8d8d8;
         text-decoration: none;
   }
 }
+.navbar-inverse .navbar-nav > li > a {
+  color:white;
+}
 
 
-#links {
+.links {
     /*text-shadow: 0px 0 white, 0 0px white, 0px 0 white, 0 0px white;*/
     /*-webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: #fff; */
     color: white;
     /*background-color: black;*/
-    @include app-font;
+    @include app-font-bold;
     font-size: 18px;
     line-height: 20px;
     &:hover {
@@ -126,11 +141,16 @@ p {
   }
 }
 
-#links_sub {
+.links a:active {
+  background-color: #222;
+}
+
+.links-sub {
   color: black;
-  @include app-font;
-  font-size: 20px;
+  @include app-font-bold;
+  font-size: 18px;
   background-color: #f99f1a;
+  line-height: 30px;
   &:hover {
         /*color: #fb2f2f;*/
         background-color: #686868;
@@ -167,11 +187,10 @@ p {
 
 #article_p {
     color: black;
-    padding: 5px;
     @include article-font;
     font-size: 18pt;
     background-color: white;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     padding-left: 15px;
     padding-right: 15px;
     /* truncates display text in css
@@ -200,17 +219,23 @@ p {
     }
 }
 
-#image, #image div.container {
-	border: 5px solid black;
-	border-radius: 150px;
-	overflow: hidden;
-	width: 100%;
-  background-color: #f99f1a;
+.image, .image div.container {
+  float:left;
+	border-radius: 8px;
   @include app-font;
+  margin: 3px;
     &:hover {
       text-decoration: none;
     }
 }
+
+img {
+  height: 250px;
+  width: 100%;
+  &:hover {
+      text-decoration: none;
+    }
+} 
 
 
 #video, #video div.container {
@@ -218,16 +243,6 @@ p {
   overflow: hidden;
   background-color: #f99f1a;
   padding: 0px;
-}
-
-#image div.left {
-	width: 45%;
-	float: left;
-}
-
-#image div.right {
-	width: 45%;
-	float: right;
 }
 
 #article_h4 {
@@ -245,19 +260,23 @@ p {
   background-color: #fafafa;
   color: white;//fallback
   @include app-font;
+  border-left: 4px solid #f99f1a;
   /*background-image: url("ggg.jpg");*/
 }
 
-#white-line {
-  padding-left: 100px;
-  padding-right: 100px;
+.orange-left-border {
+  height: auto;
+  padding-left: 30px;
+  padding-right: 30px;
   padding-top: 20px;
+  border-left: 6px solid #f99f1a;
 }
 
 #daily_quote {
   color: white;
   font-style: italic;
   font-size: 30px;
+  margin: 10px 10px;
   @include app-font;
 }
 
@@ -269,9 +288,11 @@ p {
 }
 
 #signature {
+  float:right;
   color: white;
   font-size: 15px;
   @include app-font;
+  
 }
 
 /* Custom Bootstrap */
@@ -319,16 +340,34 @@ iframe {
 }
 
 .jumbotron {
-  border-top: 6px solid #1A252A;
-  background-color: black;
-  color: white;
+  /*border-top: 6px solid #1A252A;*/
+  border-top: 3px solid #A9A9A9;
+  border-bottom: 3px solid #A9A9A9;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: white;
   text-align: center;
   /*border: 1px solid black;*/
+}
+
+#jumbotron-text {
+  padding: 20px;
+  color: black;
+}
+
+.background-shadow {
+  box-shadow: 0 0 3px rgba(0,0,0, 0.5);
 }
 
 body {
   padding-top: 56px;
   background-color: black;
+  /*background: #870000;   fallback for old browsers 
+  background: -webkit-linear-gradient(to right, #190A05, #870000);   Chrome 10-25, Safari 5.1-6 
+  background: linear-gradient(to right, #190A05, #870000);  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
+  */
+
+
 }
 
 /* footer */
@@ -359,7 +398,7 @@ body {
 }
 
 #navbar-collapse {
-  /*background-color: #222;*/
+  /*background-color: #222; */
 }
 
   
@@ -373,7 +412,7 @@ body {
 
 .btn {
   border-radius: 25px;
-  border: 1px solid black;
+  border: 2px solid black;
 }
 
 /* admin panel */
@@ -465,6 +504,13 @@ input {
   width: auto;
   margin-left: 0;
 }
+
+.hover_border {
+  border: 8px solid white;
+}
+
+
+
 
 /* **************
 *****************

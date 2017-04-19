@@ -3,7 +3,7 @@
     <div class="row">
         <h1>Articles</h1>
         <%= @articles.find_each do |x| %>
-            <div class="col col-sm-3 nopadding center">
+            <div class="col col-md-3 col-sm-4 nopadding center">
                 <div id="articles">
                     <% if x.picture? %>
                         <img><%= link_to image_tag(x.picture.url , size: "280x200"),

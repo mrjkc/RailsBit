@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<%= render 'layouts/navbar' %>
-<body>
-  <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %>"><%= message %></div>
-  <% end %>
-  
-  <%= yield %>
-</body>
-<%= render 'layouts/footer' %>
-<%= debug(params) if Rails.env.development? %>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,800" rel="stylesheet">
+    <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <%= render 'layouts/navbar' %>
+  <body>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    
+    <%= yield %>
+  </body>
+  <%= render 'layouts/footer' %>
+  <%= debug(params) if Rails.env.development? %>
 </html>
