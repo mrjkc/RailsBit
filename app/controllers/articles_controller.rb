@@ -11,13 +11,13 @@ class ArticlesController < ApplicationController
     end
     
     def new_link
-        @video = Video.new(video_params)
-        #@quote = Quote.new(quote_params) 
-        if @video.save
+        @video = Video.new(video_params) unless params[:video].nil?
+        @quote = Qoute.new(quote_params) unless params[:quote].nil?
+        if @video && @video.save || @quote && @quote.save
             flash.now[:success] = "Youtube Video Link Added!"
-            redirect_to '/articles/new'
+            redirect_to '/adminpanel'
         else 
-            render 'new'
+            redirect_to '/adminpanel'
         end
 
         #if @quote.save 

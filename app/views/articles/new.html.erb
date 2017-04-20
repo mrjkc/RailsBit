@@ -30,7 +30,7 @@
             
             <% end %>
         </div>
-        <!--<div class="well col-xs col-sm-5 col-md nopadding">
+        <div class="well col-xs col-sm-5 col-md nopadding">
             <%= form_for :quote do |x| %>
             
                 <h4><%= x.label "Add New Daily Quote",    style: "color:black" %></h4>
@@ -40,12 +40,10 @@
                 <h4><%= x.label "Daily Quote Text",       style: "color:black" %></h4>
                 <p><%=  x.text_area  :quote, size: "40x6", style: "color:black" %></p>
                 
-                <%= x.submit 'Add New Daily Quote',
-                    :url=>{:controller=>"articles",:action=>"new_link"}, 
-                    class: "btn btn-sm btn-primary" %>
-            
+                <%= x.submit 'Add New Daily Quote', class: "btn btn-sm btn-primary" %>
+                   
             <% end %>
-        </div>-->
+        </div>
     </div>    
 </div>
 <% end %>
