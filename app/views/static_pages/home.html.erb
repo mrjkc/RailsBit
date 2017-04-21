@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row">
             <b id="daily_quote_title">Daily Quote:</b>
-            <blockquote id="daily_quote" class="center">“<%= @quotes.first.quote %>”</blockquote>
-            <i id="signature"><i>-<%= @quotes.first.author %></i></i>
+            <blockquote id="daily_quote" class="center">“<%= @quotes.last.quote %>”</blockquote>
+            <i id="signature"><i>-<%= @quotes.last.author %></i></i>
     </div>   
 </div>
 <!-- switch between front end and backend -->
