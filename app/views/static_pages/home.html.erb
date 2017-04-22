@@ -10,7 +10,7 @@
 </div>
 <!-- switch between front end and backend -->
 <div class="jumbotron">
-    <h2 id="jumbotron-text">Welcome to Railsy Web Development.</h2> 
+    <h2 id="jumbotron-text">Become a Railsy Web Developer.</h2> 
     <!--<div class="btn-group">-->
     <%= link_to "Sign Up Now!", signup_path, class: "btn btn-md btn-default" %>
     <!--<%= link_to "Back End"  , backend_path, class: "btn btn-sm btn-danger sharp" %> -->
@@ -38,18 +38,20 @@
     <% break_video = 0 %>
 <!-- Display Articles -->
 <div class="container">
-    <div class="row">
+    <div class="row center">
         <%= @articles.find_each do |x| %>
-            <div class="col-md-4 col-sm-6 image">
+            <div class="col-md-4 col-xs-6">
+                <div class="image">
                 <% if x.picture? %>
-                    <img><%= link_to image_tag(x.picture.url),
-                                     article_path(x.id)  %></img>
+                        <%= link_to image_tag(x.picture.url),
+                                         article_path(x.id)  %>
                 <% else %>
-                    <img><%= link_to image_tag("ruby.png"),
-                                article_path(x.id)  %></img>
+                        <%= link_to image_tag("ruby.png"),
+                                    article_path(x.id)  %>
                 <% end %>                      
                     <h4><%= link_to x.title, article_path(x.id), id: "title_p" %></h4>
                     <!--<%= truncate(x.text, :length => 145) %> -->
+                </div>    
             </div> 
             <!-- break out of block when article count reaches 6 -->
             <% break_int += 1 %>
@@ -65,7 +67,7 @@
     <div class="row">
         <h1>Videos</h1>
         <%= @videos.find_each do |x| %>
-            <div class="col col-sm-4 col-md">
+            <div class="col-md-4 col-sm-6 ">
                 <div id="video" class="center">
                     <% puts "#{x.link}" %>
                     <iframe width="380" height="300" id="video"

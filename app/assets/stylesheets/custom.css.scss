@@ -171,7 +171,6 @@ p {
 
 #articles {
 	overflow: hidden;
-	width: 100%;
   @include app-font;
     &:hover {
       text-decoration: none;
@@ -215,7 +214,6 @@ p {
 
 #title_p {
   padding-top: 3px;
-  font-weight: bold;
   color: white;
   @include app-font;
     &:hover {
@@ -224,10 +222,13 @@ p {
 }
 
 .image, .image div.container {
-  float:left;
-	border-radius: 8px;
-  @include app-font;
-  margin: 3px;
+  /*width: 30%;
+	float: left;
+	margin: 1.66%;
+	@include app-font;*/
+	overflow: hidden;
+  border-radius: 8px;
+  border: 2px solid white;
     &:hover {
       text-decoration: none;
     }
@@ -339,8 +340,8 @@ iframe {
 }
 
 .nopadding {
-   padding: 0.5px !important;
-   margin: 0 !important;
+   padding: 2.5px !important;
+   margin: 5px !important;
 }
 
 .jumbotron {
