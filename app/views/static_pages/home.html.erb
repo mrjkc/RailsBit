@@ -44,7 +44,7 @@
                 <div class="image">
                 <% if x.picture? %>
                         <%= link_to image_tag(x.picture.url),
-                                         article_path(x.id)  %>
+                                         article_path(x.id)%>
                 <% else %>
                         <%= link_to image_tag("ruby.png"),
                                     article_path(x.id)  %>
@@ -63,21 +63,19 @@
     </div>
 </div>
 <!-- Display videos -->
+<hr>
 <div class="container"> 
     <div class="row">
         <h1>Videos</h1>
         <%= @videos.find_each do |x| %>
-            <div class="col-md-4 col-sm-6 ">
-                <div id="video" class="center">
-                    <% puts "#{x.link}" %>
-                    <iframe width="380" height="300" id="video"
-                        src=<%= "https://www.youtube.com/embed/#{x.link}" %> frameborder="0" allowfullscreen>
+            <div class="col-md-3 col-sm-6 center">
+                    <iframe src=<%= "https://www.youtube.com/embed/#{x.link}" %>
+                                    frameborder="0" allowfullscreen class="video">
                     </iframe>
                     <h4>Your video goes here <!-- add id=""title_p" when you will have embeded ruby --></h4>
-                </div>
             </div>
             <% break_video += 1 %>
-            <% break if break_video == 6 %>
+            <% break if break_video == 8 %>
         <% end %> 
         <div class="center">
             <%= link_to "Show More Videos", videos_path, class: "btn btn-md btn-default" %>

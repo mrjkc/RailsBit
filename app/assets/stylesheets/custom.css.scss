@@ -225,10 +225,9 @@ p {
   /*width: 30%;
 	float: left;
 	margin: 1.66%;
+	border-radius: 5px;
 	@include app-font;*/
 	overflow: hidden;
-  border-radius: 8px;
-  border: 2px solid white;
     &:hover {
       text-decoration: none;
     }
@@ -237,17 +236,30 @@ p {
 img {
   height: 250px;
   width: 100%;
+  border: 4px solid white;
   &:hover {
       text-decoration: none;
     }
 } 
 
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 2px solid #1A1C21;
+  margin: 1em 0;
+  padding: 0;
+}
 
-#video, #video div.container {
-  border-radius: 5px;
-  overflow: hidden;
-  background-color: #f99f1a;
-  padding: 0px;
+
+.video {
+    border: 4px solid white;
+    margin: 0 5px;
+    width: 100%;
+}
+
+iframe {
+  /*border: 4px solid white;*/
 }
 
 #article_h4 {
