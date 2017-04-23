@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
         @articles = Article.all
         @videos = Video.all
         @quotes = Qoute.all
+        @daily_quote = Qoute.process_quote(@quotes)
     end
     
     def backend
