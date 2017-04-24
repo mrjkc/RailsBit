@@ -1,14 +1,14 @@
 class Qoute < ActiveRecord::Base
+            
+    @current_date_array = ((Time.now).to_s.split("-"))[2].split(" ")
+    @counter = 1
     
-    @control_date = Date.parse('2017-04-22')
-    
-    def self.process_quote(quote)
-        current_date = (Time.now).to_s.split
-        puts current_date[0]
-        puts @control_date + 1
-        if (@control_date + 1).to_s == current_date[0] 
-            @control_date = current_date[0]
-            return quote.last.quote
-        end    
+    def self.process_quote(q)
+        q.each do |x|
+            if @counter.to_s == @current_date_array[0]
+                return x
+            end 
+            @counter += 1
+        end
     end
 end
