@@ -28,7 +28,8 @@ Rails.application.routes.draw do
   # Create actions
   
   post "adminpanel" => 'articles#new_link'
-  post "login" => 'sessions#create'
+  post "login"      => 'sessions#create'
+  post "/"          => 'static_pages#create'
   resources :articles, :except => [:new]
   resources :users
   resources :quotes

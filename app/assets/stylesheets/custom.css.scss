@@ -55,7 +55,7 @@ textarea {
 
 
 /* typography */
-h1, h2, h3, h4, h5, h6, b {
+h2, h3, h4, h5, h6, b {
     color: white;
     line-height: 1;
     @include app-font;
@@ -141,10 +141,6 @@ p {
   } 
 }
 
-::selection {
-  background: white;
-}
-
 .links a:active {
   background-color: #222;
 }
@@ -169,11 +165,34 @@ p {
   background-color: #fafafa;
 
 }
+
+#subscribe_text {
+  margin: 0;
+  padding-bottom: 0;
+  padding-top: 10px;
+}
+
+.subscribe_text {
+  color: black;
+  margin: 0;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
 /* Article styles */
 
 .top_padding {
   padding-top:15px;
 }
+
+.fields {
+            border: 1px solid grey;
+            width: 23%;
+            white-space:nowrap;
+        }
+        
+.buttons-width {
+  width: 15%;
+}        
 
 #articles {
 	overflow: hidden;
