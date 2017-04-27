@@ -62,11 +62,16 @@ h2, h3, h4, h5, h6, b {
 }
 
 h1 {
+    color: white;
     font-size: 3em;
     letter-spacing: -2px;
     margin-bottom: 30px;
     text-align: center;
     @include app-font;
+}
+
+.dark-text-color {
+  color: #777;
 }
 
 .h2 {
@@ -165,6 +170,7 @@ p {
 }
 
 #subscribe_text {
+  color: black;
   margin: 0;
   padding-bottom: 0;
   padding-top: 10px;
@@ -344,6 +350,18 @@ iframe {
   
 }
 
+.donate-style {
+  float: right;
+  margin: 0;
+  padding: 0;
+  height: 30px;
+  width: 200px;
+}
+
+#donate-style {
+  width: 40px;
+}
+
 /* Custom Bootstrap */
 
 .alert {
@@ -401,7 +419,17 @@ iframe {
 
 #jumbotron-text {
   padding: 20px;
+  margin-top: 150px;
   color: black;
+}
+
+#heading {
+  height: 450px;
+}
+
+#donate-field {
+  width: 150px;
+  height: 25px !important;
 }
 
 .background-shadow {
@@ -428,6 +456,7 @@ body {
   list-style: none;
   @include app-font;
   font-size: 14px;
+  font-weight: 300;
 }
 
 
@@ -518,12 +547,14 @@ aside {
 }
 
 /* forms */
-input, textarea, select, .uneditable-input {
+input, textarea, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
 }
+
+
 input {
   height: auto !important;
 }
