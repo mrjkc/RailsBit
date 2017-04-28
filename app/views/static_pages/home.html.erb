@@ -12,6 +12,9 @@
 <div class="jumbotron" id="heading">
     <h2 id="jumbotron-text">Become a Railsy Web Developer.</h2> 
     <%= link_to "Sign Up Now!", signup_path, class: "btn btn-md btn-default" %>
+    <div>
+        <p style="color: black">Donate <a class="btn btn-sm btn-success" href="https://www.google.com">$</a></p>
+    </div>
 </div>
 
 <!-- Welcome video -->
@@ -81,17 +84,16 @@
 </div>
 <!-- subscription form, pure bootstrap -->
 <!--<div class="container">-->
-<div class="container">
-        <%= form_for :subscription do |subs| %>
-            <div class="donate-style">       
-            <%= subs.label 'Donate', style: "color: white" %>
-            <%= subs.select :state, options_for_select(amounts) %>
-            <%= subs.text_field :email, id: "donate-style",  placeholder: "$" %>
-                    
-            <%= subs.submit '$', class: "btn btn-xs btn-success buttons-width" %>
-            </div>
-        <% end %>
-</div>
+<!--<div class="container">
+    <%= form_for :subscription do |subs| %>
+        <div class="donate-style">       
+        <%= subs.label 'Donate', style: "color: white" %>
+        <%= subs.select :state, options_for_select(amounts) %>
+        <%= subs.text_field :email, id: "donate-style",  placeholder: "$" %>
+        <%= subs.submit '$', class: "btn btn-xs btn-success buttons-width" %>
+        </div>
+    <% end %>
+</div>-->
 <div id="subscribe">
     <div class="container center">
          <%= react_component('SubscribeMessage', name: 'for the Latest News') %>
@@ -104,19 +106,19 @@
             <%= subs.text_field :email, class: "fields" %>
                 
             <%= subs.submit 'Subscribe', class: "btn btn-sm btn-default buttons-width" %>
-        <% end %>    
+        <% end %>   
     </div>
 </div>
 <script type="text/javascript">
 /*global $*/
-$(".gravatar").mouseenter(function() {
-    console.log("ENTERED");
+//$(".gravatar").mouseenter(function() {
+//    console.log("ENTERED");
     //$(this).animate({'border': '10px solid white'}, "slow");
-});
-$(".gravatar").mouseleave(function() {
-    console.log("LEFT");
+//});
+//$(".gravatar").mouseleave(function() {
+//    console.log("LEFT");
     //$(this).css("border", "none").fadeOut("slow");
-});
+//});
 </script>
 
 <!--</div>-->

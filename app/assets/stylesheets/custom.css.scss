@@ -449,7 +449,7 @@ body {
 
 /* footer */
 
-.footer-style  {
+.footer-style, .footer-style a  {
   padding: 0;
   background-color: black;
   color: white;
@@ -459,6 +459,9 @@ body {
   font-weight: 300;
 }
 
+.footer-top-border {
+  padding-top: 10px;
+}
 
 
 
