@@ -10,10 +10,10 @@
 </div>
 <!-- switch between front end and backend -->
 <div class="jumbotron" id="heading">
-    <h2 id="jumbotron-text">Become a Railsy Web Developer.</h2> 
+    <h2 id="jumbotron-text">Become a Web Developer.</h2> 
     <%= link_to "Sign Up Now!", signup_path, class: "btn btn-md btn-default" %>
     <div id="donate-button">
-        <p id="donate-p">Donate <a class="btn btn-sm btn-danger" href="https://www.google.com">$</a></p>
+        <p id="donate-p">Donate <a class="btn btn-sm btn-danger button-style" href="https://www.google.com">$</a></p>
     </div>
 </div>
 
@@ -99,12 +99,13 @@
          <%= react_component('SubscribeMessage', name: 'for the Latest News') %>
          <p class="subscribe_text">Enter Your Name and Email</p>
          <%= form_for :subscription do |subs| %>
+
             <%= subs.label "Name" %>
-            <%= subs.text_field :name, class: "fields" %>
-                
+            <%= subs.text_field :name, id: "text1" %>
+   
             <%= subs.label "Email" %>
-            <%= subs.text_field :email, class: "fields" %>
-                
+            <%= subs.text_field :email, id: "text2" %>
+       
             <%= subs.submit 'Subscribe', class: "btn btn-sm btn-default buttons-width" %>
         <% end %>   
     </div>
