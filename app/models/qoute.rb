@@ -5,7 +5,7 @@ class Qoute < ActiveRecord::Base
         counter = 1
         q.each do |x|
             if counter.to_s == current_date_array[0]
-                return x
+                return x.quote
             end 
             counter += 1
         end
