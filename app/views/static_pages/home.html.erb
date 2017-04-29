@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row">
             <b id="daily_quote_title">Daily Quote:</b>
-            <blockquote id="daily_quote" class="center">“<%= @daily_quote.quote %>”</blockquote>
-            <i id="signature"><i>-<%= @daily_quote.author %></i></i>
+            <blockquote id="daily_quote" class="center">“<%= @daily_quote.quote if !@daily_quote.blank? %>”</blockquote>
+            <i id="signature"><i>-<%= @daily_quote.author if !@daily_quote.blank? %></i></i>
     </div>   
 </div>
 <!-- switch between front end and backend -->
