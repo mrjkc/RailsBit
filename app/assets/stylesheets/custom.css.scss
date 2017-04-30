@@ -93,8 +93,7 @@ p {
 
 
 /* header */
-#logo, .article_title, .article_title a:hover, .article_title a:active, 
-  .article_title a:visited {
+#logo {
     text-decoration: none;
     float: left;
     margin-right: 10px;
@@ -294,7 +293,6 @@ p {
 }
 
 #title_p {
-  padding-top: 3px;
   color: white;
   @include app-font;
     &:hover {
@@ -309,6 +307,8 @@ p {
 	border-radius: 5px;
 	@include app-font;*/
 	overflow: hidden;
+	width: auto;
+	height: auto;
     &:hover {
       transition: 0.5s;
       -webkit-transition: 0.5s;
@@ -579,7 +579,7 @@ body {
     border: 5px solid #d9534f;
     background: white;
     color: black;
-    border-radius: 5px;
+    border-radius: 20px;
   }
 }
 
@@ -679,7 +679,13 @@ input {
   border: 8px solid white;
 }
 
+/* misc styles */
 
+.article-title{
+    height: 60px;
+    margin-top: 10px;
+    padding: 0;
+}
 
 
 /* **************

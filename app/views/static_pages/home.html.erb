@@ -40,7 +40,7 @@
 <div class="container">
     <div class="row center">
         <%= @articles.find_each do |x| %>
-            <div class=" col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-4">
                 <div class="image">
                 <% if x.picture? %>
                         <%= link_to image_tag(x.picture.url),
@@ -48,9 +48,11 @@
                 <% else %>
                         <%= link_to image_tag("ruby.png"),
                                     article_path(x.id)  %>
-                <% end %>                      
-                    <h4><%= link_to x.title, article_path(x.id), id: "title_p" %></h4>
-                    <!--<%= truncate(x.text, :length => 145) %> -->
+                <% end %>
+                    <div class="article-title">
+                        <h4><%= link_to x.title, article_path(x.id), id: "title_p" %></h4>
+                        <!--<%= truncate(x.text, :length => 145) %> -->
+                    </div>    
                 </div>    
             </div> 
             <!-- break out of block when article count reaches 6 -->

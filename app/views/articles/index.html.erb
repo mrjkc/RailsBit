@@ -3,26 +3,29 @@
     <div class="row center">
         <h1>Articles</h1>
         <%= @articles.find_each do |x| %>
-            <div class="col-md-3 col-sm-4 image">
+            <div class="col-md-4 col-sm-6">
+                <div class="image">
                     <% if x.picture? %>
-                        <%= link_to image_tag(x.picture.url , size: "280x200"),
+                        <%= link_to image_tag(x.picture.url),
                                  article_path(x.id) %>
                     <% else %>
-                        <%= link_to image_tag("image.png" , size: "280x200"),
+                        <%= link_to image_tag("image.png"),
                         article_path(x.id) %>
                     <% end %>    
                      <!--<p id="article_p">  
                         <%= x.text %>
                     </p>-->
-                    <div class="center">
-                        <h4><%= link_to x.title, article_path(x.id), class: "article_title" %></h4>
-                        <h4><%= "Author: #{x.author_name}" %></h4>
+                  
+                    <div class="article-title center">
+                        <h4><%= link_to x.title, article_path(x.id) %></h4>
+                        <p><%= "Author: #{x.author_name}" %></hp>
                         <a><%= x.liked %></a>
                     </div>
                     <% if logged_in? && current_user.admin? %>
                         <%= link_to "Delete", x, method: :delete, data: { confirm: "Are You Sure?" },
                             class: "btn btn-sm btn-danger" %>
-                    <% end %>    
+                    <% end %>
+                </div>    
             </div>    
         <% end %>
     </div>
