@@ -9,6 +9,8 @@ class UsersController < ApplicationController
     
     def show
         @user = User.find(params[:id])
+        user_since_array = (@user.created_at).to_s.split(" ")
+        @user_since = user_since_array[0]
     end
     
     def new
@@ -27,7 +29,7 @@ class UsersController < ApplicationController
            # do shit
            log_in @user
            flash[:success] = "Welcome to RailsBit.com"
-           redirect_to @user
+           redirect_to '/userpanel'
        else
            render 'new'
        end

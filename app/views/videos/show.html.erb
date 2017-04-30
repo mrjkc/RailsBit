@@ -2,7 +2,7 @@
     <div class="row">
         <h1>videos</h1>
         <%= @videos.find_each do |x| %>
-            <div class="col col-sm-4 col-md">
+            <div class="col-sm-6 col-md-4">
                 <div id="video" class="center">
                     <% puts "#{x.link}" %>
                     <iframe width="380" height="300" id="video"
