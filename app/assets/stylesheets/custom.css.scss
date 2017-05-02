@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 /* sass mixins */ 
 
@@ -710,6 +712,14 @@ input {
 #carousel .slide {
     display: inline-block;
 }
+
+/* userpanel styles */
+
+
+/* custom pop up css */
+
+.showcss{ display:block;}
+.hidecss{ display:none;}
 
 
 /* **************

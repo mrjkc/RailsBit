@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require bootstrap
 //= require turbolinks
 //= require react
@@ -21,6 +22,6 @@
 /* global $ */
 $(function() {
   setTimeout(function(){
-    $('.alert').slideUp(250);
-      }, 4000);
-    });
+        $('.alert').slideUp(250);
+    }, 4000);
+});
