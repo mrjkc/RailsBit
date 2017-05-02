@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
     def home
         @articles = Article.all
         @videos = Video.all
-        @quotes = Qoute.all
+        @quotes = Qoute.all.sort
         @daily_quote = Qoute.process_quote(@quotes)
     end
     

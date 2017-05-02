@@ -18,4 +18,9 @@
 //= require react_ujs
 //= require components
 //= require_tree .
-
+/* global $ */
+$(function() {
+  setTimeout(function(){
+    $('.alert').slideUp(250);
+      }, 4000);
+    });
