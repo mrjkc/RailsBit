@@ -7,7 +7,9 @@ $(document).ready(function(){
 });
 
 function ShowCustomDialog() {
-    ShowDialogBox('Warning','Record updated successfully.','Ok','', 'GoToAssetList',null);
+    ShowDialogBox('Welcome to RailsBit.com',
+    'Congratulations You Are About to Become a Web Developer.',
+    'Start Your Journey!','', 'GoToAssetList',null);
 	}
 
 function ShowDialogBox(title, content, btn1text, btn2text, functionText, parameterList) {
@@ -28,14 +30,14 @@ function ShowDialogBox(title, content, btn1text, btn2text, functionText, paramet
     $("#lblMessage").html(content);
 
     $("#dialog").dialog({
+        show: { effect: "blind", duration: 300 },
         resizable: false,
         title: title,
         modal: true,
-        width: '400px',
+        width: '500px',
         height: 'auto',
         bgiframe: false,
-        hide: { effect: 'scale', duration: 400 },
-
+        hide: { effect: 'clip', duration: 400 },
         buttons: [
                     {
                         text: btn1text,
