@@ -51,6 +51,10 @@
                 <% end %>
                     <div class="article-title">
                         <h4><%= link_to x.title, article_path(x.id), id: "title_p" %></h4>
+                        <div style="color: white">
+                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                            <i class="fa fa-comment-o" aria-hidden="true"></i>
+                        </div>
                         <!--<%= truncate(x.text, :length => 145) %> -->
                     </div>    
                 </div>    
@@ -75,6 +79,10 @@
                                     frameborder="0" allowfullscreen class="video">
                     </iframe>
                     <h4>Your video goes here <!-- add id=""title_p" when you will have embeded ruby --></h4>
+                    <div style="color: white">
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <i class="fa fa-comment-o" aria-hidden="true"></i>
+                    </div>
             </div>
             <% break_video += 1 %>
             <% break if break_video == 8 %>

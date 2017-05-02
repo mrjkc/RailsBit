@@ -19,7 +19,7 @@ function ShowDialogBox(title, content, btn1text, btn2text, functionText, paramet
     if (btn1text == '') {
         btn1css = "hidecss";
     } else {
-        btn1css = "showcss";
+        btn1css = "showcss btn btn-md btn-primary";
     }
 
     if (btn2text == '') {
