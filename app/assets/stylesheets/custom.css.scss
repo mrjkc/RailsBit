@@ -243,12 +243,14 @@ p {
 }
 
 .lg-buttons-width {
-  width: 30%;
+  width: 15%;
 }
 
 .forms-style {
-  width: 50%;
-  margin-left: 25%;
+  color: black;
+  border-radius: 7px;
+  width: 260px;
+  @include app-font;
 }
 
 #articles {
@@ -634,7 +636,8 @@ aside {
   float: left;
   margin-right: 10px;
 }
-.gravatar_edit {
+#gravatar_edit {
+  text-align: center;
   margin-top: 15px;
 }
 
@@ -736,6 +739,10 @@ input {
 
 .ui-dialog {
   background:black !important;
+}
+
+*:focus {
+    outline: none;
 }
 
 
