@@ -248,9 +248,8 @@ p {
 
 .forms-style {
   color: black;
-  border-radius: 7px;
-  width: 260px;
-  @include app-font;
+  width: 50%;
+  margin-left: 25%;
 }
 
 #articles {
@@ -592,6 +591,11 @@ body {
 
 #admin-panel {
   color: black;
+}
+
+.admin-col {
+  padding: 3px;
+  margin: 3px;
 }
 
 /* users index */

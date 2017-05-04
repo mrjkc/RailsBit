@@ -1,8 +1,8 @@
 
 <% if logged_in? && current_user.admin?%>
-<div class="container" id="admin-panel">
-    <div class="row">
-        <div class="well col-xs col-sm-5 col-md nopadding">
+<div class="container-fluid" id="admin-panel">
+    <div class="row inline-block-row">
+        <div class="col-sm-6 well">
             <%= form_for(@article, html: { multipart: true }) do |x| %>
                 <h4><%= x.label "Article Title", style: "color: black" %></h4>
                 <p><%= x.text_field :title, size: "20x5", style: "color: black" %></p>
@@ -20,7 +20,7 @@
                 <%= x.submit 'Upload Article', class: "btn btn-md btn-primary" %>
             <% end %>
         </div>
-        <div class="well col-xs col-sm-5 col-md nopadding">
+        <div class="col-sm-6 well">
             <%= form_for :video do |x| %>
             
                 <h4><%= x.label "Add video Link",         style: "color:black" %></h4>
@@ -30,7 +30,7 @@
             
             <% end %>
         </div>
-        <div class="well col-xs col-sm-5 col-md nopadding">
+        <div class="col-sm-6 well">
             <%= form_for :quote do |x| %>
             
                 <h4><%= x.label "Add New Daily Quote",    style: "color:black" %></h4>
@@ -41,6 +41,20 @@
                 <p><%=  x.text_area  :quote, size: "40x6", style: "color:black" %></p>
                 
                 <%= x.submit 'Add New Daily Quote', class: "btn btn-sm btn-primary" %>
+                   
+            <% end %>
+        </div>
+        <div class="col-sm-6 well">
+            <%= form_for :userpanel do |x| %>
+            
+                <h4><%= x.label "Add New Daily Quote",    style: "color:black" %></h4>
+                <h4><%= x.label "Author",                 style: "color:black" %></h4>
+                <p><%=  x.text_field :author, size: "20x5", style: "color:black" %></p>
+                
+                <h4><%= x.label "Daily Quote Text",       style: "color:black" %></h4>
+                <p><%=  x.text_area  :quote, size: "40x6", style: "color:black" %></p>
+                
+                <%= x.submit 'Add UserPanel Content', class: "btn btn-sm btn-primary" %>
                    
             <% end %>
         </div>

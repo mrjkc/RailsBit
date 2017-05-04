@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425200706) do
+ActiveRecord::Schema.define(version: 20170504203808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,35 @@ ActiveRecord::Schema.define(version: 20170425200706) do
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "userpanels", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "user_video"
+    t.boolean  "html_video"
+    t.boolean  "css_video"
+    t.boolean  "js_video"
+    t.boolean  "ror_video"
+    t.boolean  "other_video"
+    t.string   "exercise"
+    t.boolean  "html_exercise"
+    t.boolean  "css_exercise"
+    t.boolean  "js_exercise"
+    t.boolean  "ror_exercise"
+    t.boolean  "other_exercise"
+    t.string   "project"
+    t.string   "final_project"
+    t.string   "course"
+    t.boolean  "html_course"
+    t.boolean  "css_course"
+    t.boolean  "js_course"
+    t.boolean  "ror_course"
+    t.boolean  "other_course"
+    t.boolean  "complete"
+    t.boolean  "free"
+    t.string   "location"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|
