@@ -444,6 +444,7 @@ iframe {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  @include app-font;
 }
 
 div {
@@ -720,11 +721,21 @@ input {
 
 .showcss{ display:block;}
 .hidecss{ display:none;}
+
 #lblMessage {
   color: black;
 }
-.ui-dialog,.ui-widget, .ui-widget-content, .ui-corner-all, .foo, .ui-draggable, .ui-resizable {
-  background:white !important;
+.ui-widget-content {
+  background:#f99f1a !important;
+}
+
+.ui-corner-all, .foo, .ui-draggable, .ui-resizable {
+  background:black !important;
+  color: white !important;
+}
+
+.ui-dialog {
+  background:black !important;
 }
 
 

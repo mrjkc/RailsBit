@@ -2,6 +2,7 @@ class UsersController < ApplicationController
     before_action :logged_in_user, only: [:edit, :update, :index, :destroy] 
     before_action :correct_user, only: [:edit, :update]
     before_action :admin_user, only: :destroy
+    respond_to :js, :html
     
     def index
        @users = User.paginate(page: params[:page]) 
@@ -29,7 +30,8 @@ class UsersController < ApplicationController
            # do shit
            log_in @user
            flash[:success] = "Welcome to RailsBit.com"
-           redirect_to '/userpanel'
+           #redirect_to '/userpanel'
+           popup_method()
        else
            render 'new'
        end
@@ -54,6 +56,18 @@ class UsersController < ApplicationController
     end 
     
     private
+        def popup_method
+            respond_to do |format|
+                format.html { redirect_to '/userpanel' }
+                sleep(2)
+                puts "rendering javascript..."
+                format.js { 
+                            render :js => "custom_javascript/popup.js", 
+                                   :layout => false  
+                 }
+            end
+        end
+        
         def user_params
            params.require(:user).permit(:name, :email, :password, :password_confirmation)
         end

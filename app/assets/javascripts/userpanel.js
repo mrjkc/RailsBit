@@ -1,14 +1,16 @@
 /* global $ */
 $(document).ready(function(){
     $('#btnTest').click(function(){
-    console.log("button works")    
     ShowCustomDialog();
     });
 });
 
 function ShowCustomDialog() {
     ShowDialogBox('Welcome to RailsBit.com',
-    'Congratulations You Are About to Become a Web Developer.',
+    'Congratulations! You are about to change your life by becoming a web developer. ' +
+     'We are here to keep you motivated and guide you through this Journey.' +
+     ' This page is a \'userpanel\' page to track your progress and access your tutorials and courses \r\n' +
+     ', Lets Begin!',
     'Start Your Journey!','', 'GoToAssetList',null);
 	}
 
