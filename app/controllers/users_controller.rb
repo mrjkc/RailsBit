@@ -52,7 +52,7 @@ class UsersController < ApplicationController
     end
     
     def panel
-        
+       @userpanel = Userpanel.all 
     end 
     
     private
