@@ -13,13 +13,17 @@ class ArticlesController < ApplicationController
     def new_link
         @video = Video.new(video_params) unless params[:video].nil?
         @quote = Qoute.new(quote_params) unless params[:quote].nil?
+        @userpanel_content = Userpanel.new(userpanel_params) unless params[:userpanel].nil?
         if @video && @video.save
             flash[:success] = "Youtube Video Link Added!"
             redirect_to '/adminpanel'
         elsif @quote && @quote.save
             flash[:success] = "New Daily Quote Added!"
             redirect_to '/adminpanel'
-        else
+        elsif @userpanel_content && @userpanel_content.save
+            flash[:success] = "UserPanel content added!"
+            redirect_to '/adminpanel'
+        else    
             redirect_to '/adminpanel'
         end
 
@@ -57,7 +61,7 @@ class ArticlesController < ApplicationController
                 format.json { render :show, status: :ok, location: @article }
             else
                 format.html { render :edit }
-                format.json { render json: @article.errors, status: :unprocessable_entoty }
+                format.json { render json: @article.errors, status: :unprocessable_entity }
             end    
         end
     end
@@ -87,6 +91,14 @@ class ArticlesController < ApplicationController
     def article_params
         params.require(:article).permit(:title, :text, :liked, :author_name,
                                   :image_link, :picture)
+    end
+    
+    def userpanel_params
+        params.require(:userpanel).permit(:user_id, :user_video, :html_video, :css_video, 
+        :js_video, :ror_video, :other_video, :exercise, :html_exercise, :css_exercise,
+        :js_exercise, :ror_exercise, :other_exercise, :project, :final_project, :course,
+        :html_course, :css_course, :js_course, :ror_course, :other_course, :complete,
+        :free, :location)
     end
     
     def video_params

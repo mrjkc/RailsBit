@@ -30,8 +30,8 @@ class UsersController < ApplicationController
            # do shit
            log_in @user
            flash[:success] = "Welcome to RailsBit.com"
-           #redirect_to '/userpanel'
-           popup_method()
+           redirect_to '/userpanel'
+           #popup_method()
        else
            render 'new'
        end
