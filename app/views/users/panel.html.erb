@@ -1,7 +1,7 @@
 <% if logged_in? %>
 <div class="container">
     <div class="row center">
-        <h4>You are <span id="days-from">100</span> days away from becoming a web developer</h4>
+        <h4>You are <span class="blink_me">100</span> days away from becoming a web developer</h4>
     </div>
     <!-- custom pop up on login -->
     <input type="button" id ="btnTest" value="Test"/>
@@ -24,13 +24,15 @@
             </iframe>
             <input type="checkbox" autocomplete="off">
             <div class="carousel">
-                <%= @userpanel.find_each do |pnl| %>
-                    <div class="slide">
-                        <iframe src=<%= "https://www.youtube.com/embed/#{pnl.user_video}" %>
-                                    frameborder="0" allowfullscreen>
-                        </iframe>
-                    </div>
-                <% end %>    
+                <div class="slide">
+                    <%= @userpanel.find_each do |pnl| %>
+                        <% if pnl.html_video == true %>
+                            <iframe src=<%= "https://www.youtube.com/embed/#{pnl.user_video}" %>
+                                        frameborder="0" allowfullscreen>
+                            </iframe>
+                        <% end %>
+                    <% end %>
+                </div>
             </div>
             <h4>HTML Exercises</h4>
             <h5>Skill Progress Bar</h5>
@@ -47,22 +49,13 @@
             <input type="checkbox" autocomplete="off">
             <div class="carousel">
                 <div class="slide">
-                    <img src="https://placehold.it/300x150"/>
-                </div>
-                <div class="slide">
-                    <img src="https://placehold.it/300x150"/>
-                </div>
-                <div class="slide">
-                    <img src="https://placehold.it/300x150"/>
-                </div>
-                <div class="slide">
-                    <img src="https://placehold.it/300x150"/>
-                </div>
-                <div class="slide">
-                    <img src="https://placehold.it/300x150"/>
-                </div>
-                <div class="slide">
-                    <img src="https://placehold.it/300x150"/>
+                    <%= @userpanel.find_each do |pnl| %>
+                        <% if pnl.css_video == true %>
+                            <iframe src=<%= "https://www.youtube.com/embed/#{pnl.user_video}" %>
+                                        frameborder="0" allowfullscreen>
+                            </iframe>
+                        <% end %>
+                    <% end %> 
                 </div>
             </div>
             <h5>Skill Progress Bar</h5>
@@ -79,22 +72,13 @@
             <input type="checkbox" autocomplete="off">
             <div class="carousel">
                 <div class="slide">
-                    <img src="https://placehold.it/300x150"/>
-                </div>
-                <div class="slide">
-                    <img src="https://placehold.it/300x150"/>
-                </div>
-                <div class="slide">
-                    <img src="https://placehold.it/300x150"/>
-                </div>
-                <div class="slide">
-                    <img src="https://placehold.it/300x150"/>
-                </div>
-                <div class="slide">
-                    <img src="https://placehold.it/300x150"/>
-                </div>
-                <div class="slide">
-                    <img src="https://placehold.it/300x150"/>
+                    <%= @userpanel.find_each do |pnl| %>
+                        <% if pnl.js_video == true %>
+                            <iframe src=<%= "https://www.youtube.com/embed/#{pnl.user_video}" %>
+                                        frameborder="0" allowfullscreen>
+                            </iframe>
+                        <% end %>
+                    <% end %>
                 </div>
             </div>
             <h5>Skill Progress Bar</h5>
@@ -111,22 +95,13 @@
             <input type="checkbox" autocomplete="off">
             <div class="carousel">
                 <div class="slide">
-                    <img src="https://placehold.it/300x150"/>
-                </div>
-                <div class="slide">
-                    <img src="https://placehold.it/300x150"/>
-                </div>
-                <div class="slide">
-                    <img src="https://placehold.it/300x150"/>
-                </div>
-                <div class="slide">
-                    <img src="https://placehold.it/300x150"/>
-                </div>
-                <div class="slide">
-                    <img src="https://placehold.it/300x150"/>
-                </div>
-                <div class="slide">
-                    <img src="https://placehold.it/300x150"/>
+                    <%= @userpanel.find_each do |pnl| %>
+                        <% if pnl.ror_video == true %>
+                            <iframe src=<%= "https://www.youtube.com/embed/#{pnl.user_video}" %>
+                                        frameborder="0" allowfullscreen>
+                            </iframe>
+                        <% end %>
+                    <% end %>
                 </div>
             </div>
             <h5>Skill Progress Bar</h5>

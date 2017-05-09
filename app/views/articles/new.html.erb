@@ -1,5 +1,5 @@
-
 <% if logged_in? && current_user.admin?%>
+<h3>Admin Panel</h3>
 <div class="container-fluid" id="admin-panel">
     <div class="row inline-block-row">
         <div class="col-sm-6 well">
@@ -33,11 +33,11 @@
         <div class="col-sm-6 well">
             <%= form_for :quote do |x| %>
             
-                <h4><%= x.label "Add New Daily Quote",    style: "color:black" %></h4>
-                <h4><%= x.label "Author",                 style: "color:black" %></h4>
+                <h4><%= x.label "Add New Daily Quote",      style: "color:black" %></h4>
+                <h4><%= x.label "Author",                   style: "color:black" %></h4>
                 <p><%=  x.text_field :author, size: "20x5", style: "color:black" %></p>
                 
-                <h4><%= x.label "Daily Quote Text",       style: "color:black" %></h4>
+                <h4><%= x.label "Daily Quote Text",        style: "color:black" %></h4>
                 <p><%=  x.text_area  :quote, size: "40x6", style: "color:black" %></p>
                 
                 <%= x.submit 'Add New Daily Quote', class: "btn btn-sm btn-primary" %>
@@ -52,46 +52,46 @@
                 <hr>
                 <h4><%= x.label "Video Link",                   style: "color:black" %></h4>
                 <p><%=  x.text_field :user_video, size: "20x5", style: "color:black" %></p>
-                <%= x.label "HTML Video", style: "color:black" %>
-                <%= x.check_box :html_video %>
-                <%= x.label "CSS Video", style: "color:black" %>
-                <%= x.check_box :css_video %>
-                <%= x.label "JS Video", style: "color:black" %>
-                <%= x.check_box :js_video %>
-                <%= x.label "ROR Video", style: "color:black" %>
-                <%= x.check_box :ror_video %>
+                <%= x.label "HTML Video",  style: "color:black" %>
+                <%= x.check_box :html_video  %>
+                <%= x.label "CSS Video",   style: "color:black" %>
+                <%= x.check_box :css_video   %>
+                <%= x.label "JS Video",    style: "color:black" %>
+                <%= x.check_box :js_video    %>
+                <%= x.label "ROR Video",   style: "color:black" %>
+                <%= x.check_box :ror_video   %>
                 <%= x.label "OTHER Video", style: "color:black" %>
                 <%= x.check_box :other_video %>
                 <hr>
-                <h4><%= x.label "Exercise",                 style: "color:black" %></h4>
+                <h4><%= x.label "Exercise",                  style: "color:black" %></h4>
                 <p><%=  x.text_area :exercise, size: "20x5", style: "color:black" %></p>
-                <%= x.label "HTML exercise", style: "color:black" %>
-                <%= x.check_box :html_exercise %>
-                <%= x.label "CSS exercise", style: "color:black" %>
-                <%= x.check_box :css_exercise %>
-                <%= x.label "JS exercise", style: "color:black" %>
-                <%= x.check_box :js_exercise %>
-                <%= x.label "ROR exercise", style: "color:black" %>
-                <%= x.check_box :ror_exercise %>
+                <%= x.label "HTML exercise",  style: "color:black" %>
+                <%= x.check_box :html_exercise  %>
+                <%= x.label "CSS exercise",   style: "color:black" %>
+                <%= x.check_box :css_exercise   %>
+                <%= x.label "JS exercise",    style: "color:black" %>
+                <%= x.check_box :js_exercise    %>
+                <%= x.label "ROR exercise",   style: "color:black" %>
+                <%= x.check_box :ror_exercise   %>
                 <%= x.label "OTHER exercise", style: "color:black" %>
                 <%= x.check_box :other_exercise %>
                 <hr>
-                <h4><%= x.label "Project",                 style: "color:black" %></h4>
+                <h4><%= x.label "Project",                  style: "color:black" %></h4>
                 <p><%=  x.text_area :project, size: "20x5", style: "color:black" %></p>
                 <hr>
-                <h4><%= x.label "Final Project",                 style: "color:black" %></h4>
+                <h4><%= x.label "Final Project",                  style: "color:black" %></h4>
                 <p><%=  x.text_area :final_project, size: "20x5", style: "color:black" %></p>
                 <hr>
-                <h4><%= x.label "Course Link",       style: "color:black" %></h4>
+                <h4><%= x.label "Course Link",               style: "color:black" %></h4>
                 <p><%=  x.text_field  :course, size: "20x5", style: "color:black" %></p>
-                <%= x.label "HTML course", style: "color:black" %>
-                <%= x.check_box :html_course %>
-                <%= x.label "CSS course", style: "color:black" %>
-                <%= x.check_box :css_course %>
-                <%= x.label "JS course", style: "color:black" %>
-                <%= x.check_box :js_course %>
-                <%= x.label "ROR course", style: "color:black" %>
-                <%= x.check_box :ror_course %>
+                <%= x.label "HTML course",  style: "color:black" %>
+                <%= x.check_box :html_course  %>
+                <%= x.label "CSS course",   style: "color:black" %>
+                <%= x.check_box :css_course   %>
+                <%= x.label "JS course",    style: "color:black" %>
+                <%= x.check_box :js_course    %>
+                <%= x.label "ROR course",   style: "color:black" %>
+                <%= x.check_box :ror_course   %>
                 <%= x.label "OTHER course", style: "color:black" %>
                 <%= x.check_box :other_course %>
                 <%= x.label "Free Course Or Paid (if checked is free)", style: "color:black" %>

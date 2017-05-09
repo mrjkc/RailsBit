@@ -697,11 +697,6 @@ input {
     padding: 0;
 }
 
-#days-from {
-  border: 3px solid #f99f1a;
-  padding: 1px;
-}
-
 .underline {
   border-bottom: 4px groove white;
 }
@@ -720,11 +715,22 @@ input {
 .carousel .slide, .carousel iframe {
     height: 245px;
     display: inline-block;
+    margin-left:2px;
 }
 
 /* userpanel styles */
 
+.blink_me {
+  animation: blinker 1.5s linear infinite;
+  color: orange;
+  font-size: 30px;
+  /*border: 3px solid #f99f1a;
+  padding: 1px;*/
+}
 
+@keyframes blinker {  
+  50% { opacity: 0; }
+}
 /* custom pop up css */
 
 .showcss{ display:block;}

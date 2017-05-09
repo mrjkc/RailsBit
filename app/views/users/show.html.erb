@@ -1,14 +1,50 @@
 <% provide(:title, @user.name) %>
 <div class="container">
     <div class="row">
-        <aside class="col-md-4">
+        <div class="col-sm-6">
             <section class="user_info">
-                <h1>
-                    <%= gravatar_for @user %>
-                    <h6>User since: <%= @user_since %></h6>
-                    <%= @user.name %>
-                </h1>
+                <%= gravatar_for @user %>
+                <p>User since: <%= @user_since %><br>
+                Name: <%= @user.name %><br>
+                Role: <%= @user.role %><br>
+                Days Left Till Becoming Web Developer: <span class="blink_me">100</span></p>
             </section>
-        </aside>
+        </div>
+        <div class="col-sm-6">
+            <section class="user_info">
+                <h4>Learning Progress</h4>
+                <hr style="background-color:white">
+                <h5>HTML</h5>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" 
+                    aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+                      <span class="sr-only">70% Complete</span>
+                    </div>
+                </div>
+                <h5>CSS</h5>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" 
+                    aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+                      <span class="sr-only">70% Complete</span>
+                    </div>
+                </div>
+                <h5>JavaScript</h5>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" 
+                    aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+                      <span class="sr-only">70% Complete</span>
+                    </div>
+                </div>
+                <h5>Ruby on Rails</h5>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" 
+                    aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+                      <span class="sr-only">70% Complete</span>
+                    </div>
+                </div>
+            </section>
+            <h4>Badges</h4>
+            <hr style="background-color:white">
+        </div>
     </div>
 </div>
