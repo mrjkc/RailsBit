@@ -691,10 +691,17 @@ input {
 
 /* misc styles */
 
+.article-title2{
+    height: 60px;
+    padding-top: 30px;
+    color: black;
+    @include article-font;
+}
+
 .article-title{
     height: 60px;
     margin-top: 10px;
-    padding: 0;
+    color: black;
 }
 
 .underline {

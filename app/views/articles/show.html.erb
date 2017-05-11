@@ -2,16 +2,19 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-        <h2 class="article-title"><%= @article.title %></h2>
-        <p id="article_p">
-            <%= @article.text %>
-            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-            <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-            <%= image_tag(@article.picture.url, size: "400x300", class: "thumbnail") if @article.picture? %>
-        </p>
-        <% if logged_in? && current_user.admin? %>
-            <%= link_to "Edit", edit_article_path, class: "btn btn-sm btn-primary" %>
-        <% end %>
+            <div id="article_p">
+                <h3 class="article-title2"><%= @article.title %></h3>
+                <h6 style="color:black">By: <%= @article.author_name %> /
+                <%= (@article.created_at.to_s.split(" "))[0] %></h6>
+                <hr>            
+                <%= @article.text %>
+                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                <%= image_tag(@article.picture.url, size: "400x300", class: "thumbnail") if @article.picture? %>
+            </div>
+            <% if logged_in? && current_user.admin? %>
+                <%= link_to "Edit", edit_article_path, class: "btn btn-sm btn-primary" %>
+            <% end %>
         </div>
         <div class="col-sm-3 center">
             <h4>Latest Videos</h4>

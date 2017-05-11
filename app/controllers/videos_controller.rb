@@ -3,7 +3,6 @@ class VideosController < ApplicationController
     
     def show 
        @videos = Video.all 
-       puts current_user.name
     end
     
     def destroy
