@@ -1,0 +1,19 @@
+<div class="container">
+    <h4>Contact Us</h4>
+    <%= form_for @contact_us do |x| %>
+    
+        <%= x.label "Name" %>
+        <%= x.text_field :name, size: "20x5" %>
+        
+        <%= x.label "Email" %>
+        <%= x.text_field :email, size: "20x5" %>
+        
+        <%= x.label "Phone Number" %>
+        <%= x.text_field :phone, size: "20x5" %>
+        
+        <%= x.label "Message" %>
+        <%= x.text_field :message, size: "20x5" %>
+    
+    <% end %>
+    
+</div>

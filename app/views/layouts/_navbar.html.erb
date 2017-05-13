@@ -47,15 +47,15 @@
                 </li>-->
                 
                 <li><%= link_to "Articles", articles_path, class: 'links' %></li>
-                <li><%= link_to "Videos", videos_path, class: 'links' %></li>
-                <li><%= link_to "About", '#', class: 'links' %></li>
-                <li><%= link_to "Contact", '#', class: 'links' %></li>
+                <li><%= link_to "Videos",   videos_path,   class: 'links' %></li>
+                <li><%= link_to "About",    about_path ,   class: 'links' %></li>
+                <li><%= link_to "Contact",  contact_path,  class: 'links' %></li>
             </ul>
             <% if logged_in? %>
                 <ul class="nav navbar-nav navbar-right">
                     <% if logged_in? && current_user.admin? %>
                         <li><%= link_to "Admin Panel", adminpanel_path, class: "links" %></li>
-                    <li><%= link_to "Users", users_path, class: "links" %></li>
+                        <li><%= link_to "Users", users_path, class: "links" %></li>
                     <% end %> 
                     <li><%= link_to "UserPanel", userpanel_path, class: "links" %></li>
                     <li class="dropdown">

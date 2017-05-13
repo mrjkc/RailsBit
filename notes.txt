@@ -1,0 +1,12 @@
+Simple explanation on how to call model method in controller
+http://stackoverflow.com/questions/11139605/call-a-model-method-in-a-controller
+
+Plan:
+* homepage is complete whenever pushing to production just need to adjust daily qoute.
+* articles index page - need to style the title and add total likes and comments.
+* implement videos likes and comments
+* need to fully implement about page
+* need to fully implement contact page
+* need to finish userpanel page (a lot of work still)
+* Finish implementing user profile page
+* Some styling in the user edit page  (settings)

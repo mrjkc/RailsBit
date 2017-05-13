@@ -1,5 +1,12 @@
 class StaticPagesController < ApplicationController
     
+    def about
+    end
+    
+    def contact
+        @contact_us = ContactU.new(contact_params)
+    end
+    
     def home
         @articles = Article.all
         @videos = Video.all
@@ -23,6 +30,10 @@ class StaticPagesController < ApplicationController
     private
         def subs_params
            params.require(:subscription).permit(:name, :email)
+        end
+        
+        def contact_params
+           params.require(:contact_us).permit(:name, :email, :phone, :message)
         end
     
 end

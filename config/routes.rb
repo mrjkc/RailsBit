@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get 'learn_javascript' => 'learn#javascript'
   get 'learn_rails' => 'learn#rails'
   get 'userpanel'  =>  'users#panel'
+  get 'about'      =>  'static_pages#about'
+  get 'contact'    =>  'static_pages#contact'
   
   # Forms routes
   
