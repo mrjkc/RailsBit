@@ -4,7 +4,14 @@ class StaticPagesController < ApplicationController
     end
     
     def contact
-        @contact_us = ContactU.new(contact_params)
+    end
+    
+    def new_contact
+        @contact_us = ContactU.new(contact_us_params)
+        if @contact_us.save
+           flash[:success] = "Successfully Submitted!"
+           redirect_to '/contact'
+       end
     end
     
     def home
@@ -32,8 +39,8 @@ class StaticPagesController < ApplicationController
            params.require(:subscription).permit(:name, :email)
         end
         
-        def contact_params
-           params.require(:contact_us).permit(:name, :email, :phone, :message)
+        def contact_us_params
+           params.require(:contact_us).permit(:email, :phone, :name, :message)
         end
     
 end

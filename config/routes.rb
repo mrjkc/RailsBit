@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   post "adminpanel" => 'articles#new_link'
   post "login"      => 'sessions#create'
   post "/"          => 'static_pages#create'
+  post 'contact'=> 'static_pages#new_contact'
   resources :articles, :except => [:new]
   resources :users
   resources :quotes

@@ -6,8 +6,7 @@ class Qoute < ActiveRecord::Base
         q.each do |x|
             if current_date_array[0][0,1] == '0'
                 current_date_array[0] = current_date_array[0][1,1]
-            end
-            if counter.to_s == current_date_array[0]
+            elsif counter.to_s == current_date_array[0]
                 return x
             end 
             counter += 1
