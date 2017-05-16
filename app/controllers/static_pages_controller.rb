@@ -11,14 +11,18 @@ class StaticPagesController < ApplicationController
         if @contact_us.save
            flash[:success] = "Successfully Submitted!"
            redirect_to '/contact'
-       end
+        end
     end
     
     def home
         @articles = Article.all
         @videos = Video.all
         @quotes = Qoute.all.sort
-        @daily_quote = Qoute.process_quote(@quotes)
+        begin
+            @daily_quote = Qoute.process_quote(@quotes)
+        rescue Exception => e  
+            puts e.message  
+        end
     end
     
     def backend

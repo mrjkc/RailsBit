@@ -1,22 +1,25 @@
 <div class="container">
     <h4>Contact Us</h4>
-    <div class="md-width">
+    <div class="col-sm-6 md-width">
     <%= form_for :contact_us do |x| %>
     
         <h4><%= x.label "Name" %></h4>
-        <%= x.text_field :name, size: "20x5" %>
+        <p><%= x.text_field :name, size: "20x5", class: "black" %></p>
         
         <h4><%= x.label "Email" %></h4>
-        <%= x.text_field :email, size: "20x5" %>
+        <p><%= x.text_field :email, size: "20x5", class: "black" %></p>
         
         <h4><%= x.label "Phone Number" %></h4>
-        <%= x.text_field :phone, size: "20x5" %>
+        <p><%= x.text_field :phone, size: "20x5", class: "black" %></p>
         
         <h4><%= x.label "Message" %></h4>
-        <%= x.text_area :message, size: "20x5" %>
+        <p><%= x.text_area :message, size: "20x5", class: "black" %></p>
         
         <%= x.submit "Send", class: "btn btn-md btn-success buttons-width" %>
     
     <% end %>
+    </div>
+    <div class="col-sm-6 center">
+        <%= link_to "Support", root_path, class: "btn-lg btn-success myButton" %>  
     </div>
 </div>
