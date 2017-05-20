@@ -1,4 +1,5 @@
 class Article < ActiveRecord::Base
+    has_many :likes
     mount_uploader :picture, PictureUploader
     validate :picture_size
     
