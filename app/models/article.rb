@@ -1,5 +1,6 @@
 class Article < ActiveRecord::Base
     has_many :likes
+    has_many :comments
     mount_uploader :picture, PictureUploader
     validate :picture_size
     
@@ -9,6 +10,9 @@ class Article < ActiveRecord::Base
     
     def thumbs_down_total
         self.likes.where(likes: false).size
+    end
+    
+    def comment_article
     end
     
     private

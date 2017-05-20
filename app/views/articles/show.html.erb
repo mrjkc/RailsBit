@@ -29,7 +29,11 @@
                 <div>
                     <h5 class="black">Comments</h5>
                     <hr>
-                    <input type="text">
+                    <i class="fa fa-comments" aria-hidden="true"></i>
+                    <%= form_for comment_article_path(@article) do | comment | %>
+                        <%= comment.text_area(:comment, size: "20x5") %>
+                        <%= comment.submit "Comment", class: "btn btn-md btn-default" %>
+                    <% end %>
                 </div>
             </div>
             <% if logged_in? && current_user.admin? %>

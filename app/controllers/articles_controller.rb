@@ -103,6 +103,12 @@ class ArticlesController < ApplicationController
         end
     end
     
+    def comment
+        @article = Article.find(params[:id])
+        Comment.create(comment: params[:comment], user: current_user, article: @article)
+        redirect_to :back
+    end
+    
     private 
     
     def article_params

@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   resources :articles, :except => [:new] do
     member do 
       post 'like'
+      post 'comment'
     end
   end
   resources :users
