@@ -19,11 +19,10 @@
                     <div class="article-title center">
                         <h4><%= link_to x.title, article_path(x.id) %></h4>
                         <p><%= "Author: #{x.author_name}" %></hp>
-                        <a><%= x.liked %></a>
-                        <div style="color: white">
-                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                            <i class="fa fa-comment-o" aria-hidden="true"></i>
-                        </div>
+                        <br>
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>  &nbsp
+                        <%= x.thumbs_up_total %>  &nbsp
+                        <i class="fa fa-comments" aria-hidden="true"></i>
                     </div>
                     <% if logged_in? && current_user.admin? %>
                         <%= link_to "Delete", x, method: :delete, data: { confirm: "Are You Sure?" },

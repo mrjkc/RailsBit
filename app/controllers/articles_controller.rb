@@ -86,6 +86,18 @@ class ArticlesController < ApplicationController
         
     end
     
+    def like
+        @article = Article.find(params[:id])
+        like = Like.create(likes: params[:like], user: current_user, article: @article)
+        if like.valid?
+            flash[:success] = "Your selection was successful"
+            redirect_to :back
+        else
+            flash[:danger] = "You can not select more than once"
+            redirect_to :back
+        end
+    end
+    
     private 
     
     def article_params

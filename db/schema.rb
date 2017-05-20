@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20170520165708) do
     t.boolean  "likes"
     t.integer  "article_id"
     t.integer  "video_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

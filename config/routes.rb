@@ -33,7 +33,11 @@ Rails.application.routes.draw do
   post "login"      => 'sessions#create'
   post "/"          => 'static_pages#create'
   post 'contact'=> 'static_pages#new_contact'
-  resources :articles, :except => [:new]
+  resources :articles, :except => [:new] do
+    member do 
+      post 'like'
+    end
+  end
   resources :users
   resources :quotes
   
