@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
     end
     
     def index
-        @articles = Article.all
+        @articles = Article.all.sort_by{| likes | likes.thumbs_up_total}.reverse
     end
     
     def create
@@ -88,12 +88,17 @@ class ArticlesController < ApplicationController
     
     def like
         @article = Article.find(params[:id])
-        like = Like.create(likes: params[:like], user: current_user, article: @article)
-        if like.valid?
-            flash[:success] = "Your selection was successful"
-            redirect_to :back
+        if logged_in?
+            like = Like.create(likes: params[:like], user: current_user, article: @article)
+            if like.valid?
+                flash[:success] = "Your selection was successful"
+                redirect_to :back
+            else
+                flash[:danger] = "You can not select more than once"
+                redirect_to :back
+            end
         else
-            flash[:danger] = "You can not select more than once"
+            flash[:warning] = "Please Login"
             redirect_to :back
         end
     end

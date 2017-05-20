@@ -15,7 +15,7 @@ class StaticPagesController < ApplicationController
     end
     
     def home
-        @articles = Article.all
+        @articles = Article.all.sort_by{| likes | likes.thumbs_up_total}.reverse
         @videos = Video.all
         @quotes = Qoute.all.sort
         begin
