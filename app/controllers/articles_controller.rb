@@ -36,7 +36,8 @@ class ArticlesController < ApplicationController
     end
     
     def index
-        @articles = Article.all.sort_by{| likes | likes.thumbs_up_total}.reverse
+      @articles = Article.all.sort_by{| likes | likes.thumbs_up_total}.reverse
+      custom_each(@articles)
     end
     
     def create
