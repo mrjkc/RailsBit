@@ -52,9 +52,10 @@
                     <div class="article-title">
                         <h4><%= link_to x.title, article_path(x.id), id: "title_p" %></h4>
                         <div style="color: white">
-                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>  &nbsp
+                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
                         <%= x.thumbs_up_total %>  &nbsp
                         <i class="fa fa-comments" aria-hidden="true"></i>
+                        <%= x.comments_total %>
                         </div>
                         <!--<%= truncate(x.text, :length => 145) %> -->
                     </div>    

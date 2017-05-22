@@ -12,6 +12,10 @@ class Article < ActiveRecord::Base
         self.likes.where(likes: false).size
     end
     
+    def comments_total
+        self.comments.where(article_id: self.id).size
+    end
+    
     def comment_article
     end
     

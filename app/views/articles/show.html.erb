@@ -36,6 +36,8 @@
                         <%= comment.hidden_field :user_id, :value => current_user.id unless current_user.nil? %>
                         <%= comment.submit "Comment", class: "btn btn-md btn-default" %>
                     <% end %>
+                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                    <%= @article.comments_total %>
                     <br>
                     <% @comments.each do |x| %>
                         <div class="well">
