@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
     def show
         @article = Article.find(params[:id])
         @videos = Video.all
+        @comments = Comment.joins(:article).where({article_id: @article.id})
     end 
     
     def new

@@ -36,6 +36,15 @@
                         <%= comment.hidden_field :user_id, :value => current_user.id %>
                         <%= comment.submit "Comment", class: "btn btn-md btn-default" %>
                     <% end %>
+                    <br>
+                    <% @comments.each do |x| %>
+                        <div class="well">
+                            <%= gravatar_for_comments User.find(x.user_id) %>
+                            <h6 class="black"><%= user_hash(x.user_id) %></h6>
+                            <p class="black"><%= x.comment %></p>
+                        </div>
+                        <hr>
+                    <% end %>
                 </div>
             </div>
             <% if logged_in? && current_user.admin? %>
