@@ -30,8 +30,10 @@
                     <h5 class="black">Comments</h5>
                     <hr>
                     <i class="fa fa-comments" aria-hidden="true"></i>
-                    <%= form_for comment_article_path(@article), url: {controller: "articles", action: "comment"} do | comment | %>
-                        <%= comment.text_area(:comment, size: "20x5") %>
+                    <%= form_for :comment, url: {controller: "articles", action: "comment"} do | comment | %>
+                        <%= comment.text_area :comment, size: "20x5" %>
+                        <%= comment.hidden_field :article_id, :value => @article.id %>
+                        <%= comment.hidden_field :user_id, :value => current_user.id %>
                         <%= comment.submit "Comment", class: "btn btn-md btn-default" %>
                     <% end %>
                 </div>
@@ -39,6 +41,7 @@
             <% if logged_in? && current_user.admin? %>
                 <%= link_to "Edit", edit_article_path, class: "btn btn-sm btn-primary" %>
             <% end %>
+            <h5 class="black">Comments</h5>
         </div>
         <div class="col-sm-3 center">
             <h4>Latest Videos</h4>

@@ -37,7 +37,6 @@ class ArticlesController < ApplicationController
     
     def index
       @articles = Article.all.sort_by{| likes | likes.thumbs_up_total}.reverse
-      custom_each(@articles)
     end
     
     def create
@@ -106,7 +105,7 @@ class ArticlesController < ApplicationController
     
     def comment
         @article = Article.find(params[:id])
-        Comment.create(comment: params[:comment], user: current_user, article: @article)
+        @comment = Comment.create(comment_params)
         redirect_to :back
     end
     
@@ -135,6 +134,10 @@ class ArticlesController < ApplicationController
     
     def admin_user
         redirect_to(root_url) && flash[:danger] = 'forbidden' unless current_user && current_user.admin?
+    end
+    
+    def comment_params
+        params.require(:comment).permit(:comment, :user_id, :article_id, :video_id)
     end
     
 end
