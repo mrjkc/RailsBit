@@ -1,8 +1,8 @@
 class VideosController < ApplicationController
     before_action :admin_user, only: [:destroy]
     
-    def show 
-       @videos = Video.all 
+    def index 
+       @videos = Video.paginate(page: params[:page], per_page: 9)
     end
     
     def destroy

@@ -1,25 +1,22 @@
-<div class="container">
+<div class="row center">
     <h4>Contact Us</h4>
-    <div class="col-sm-6 md-width">
-    <%= form_for :contact_us do |x| %>
+    <div class="col-md-6 col-md-offset-3">
+        <%= form_for :contact_us do |x| %>
+        
+            <h4><%= x.label "Name" %></h4>
+            <%= x.text_field :name, size: "20x5", class: "form-control" %>
+            
+            <h4><%= x.label "Email" %></h4>
+            <%= x.text_field :email, size: "20x5", class: "form-control" %>
+            
+            <h4><%= x.label "Phone Number" %></h4>
+            <%= x.text_field :phone, size: "20x5", class: "form-control" %>
+            
+            <h4><%= x.label "Message" %></h4>
+            <%= x.text_area :message, size: "20x5", class: "form-control" %>
     
-        <h4><%= x.label "Name" %></h4>
-        <p><%= x.text_field :name, size: "20x5", class: "black" %></p>
+            <%= x.submit "Send", class: "btn btn-md btn-success buttons-width" %>
         
-        <h4><%= x.label "Email" %></h4>
-        <p><%= x.text_field :email, size: "20x5", class: "black" %></p>
-        
-        <h4><%= x.label "Phone Number" %></h4>
-        <p><%= x.text_field :phone, size: "20x5", class: "black" %></p>
-        
-        <h4><%= x.label "Message" %></h4>
-        <p><%= x.text_area :message, size: "20x5", class: "black" %></p>
-        
-        <%= x.submit "Send", class: "btn btn-md btn-success buttons-width" %>
-    
-    <% end %>
-    </div>
-    <div class="col-sm-6 center">
-        <%= link_to "Support", root_path, class: "btn-lg btn-success myButton" %>  
+        <% end %>
     </div>
 </div>
