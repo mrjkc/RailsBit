@@ -106,8 +106,18 @@ class ArticlesController < ApplicationController
     
     def comment
         @article = Article.find(params[:id])
-        @comment = Comment.create(comment_params)
-        redirect_to :back
+        if logged_in?
+            @comment = Comment.create(comment_params)
+            if @comment.save
+                flash[:success] = "Comment Added" 
+                redirect_to :back
+            else
+                redirect_to :back
+            end 
+        else
+            flash[:danger] = "You must login in order to comment"
+            redirect_to :back
+        end
     end
     
     private 
