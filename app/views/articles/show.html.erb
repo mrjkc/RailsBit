@@ -43,7 +43,7 @@
                         <div class="well">
                             <%= gravatar_for_comments User.find(x.user_id) if !x.user_id.nil? %>
                             <h6 class="black"><%= user_hash(x.user_id) %></h6>
-                            <span class="black small-font"><%= x.comment %></span>
+                            <p class="black small-font"><%= x.comment %></p>
                         </div>
                         <hr>
                     <% end %>

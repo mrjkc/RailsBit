@@ -4,15 +4,16 @@
     <div class="row inline-block-row">
         <div class="col-sm-6 well">
             <%= form_for(@article, html: { multipart: true }) do |x| %>
-                <h4><%= x.label "Article Title", style: "color: black" %></h4>
-                <p><%= x.text_field :title, size: "20x5", style: "color: black" %></p>
+                <h4><%= x.label "Article Title", class: "black" %></h4>
+                <p><%= x.text_field :title, size: "20x5", class: "black" %></p>
                 
-                <h4><%= x.label "Author Name", style: "color:black" %></h4>
-                <p><%= x.text_field :author_name, size: "20x5", style: "color: black" %></p>
+                <h4><%= x.label "Author Name", class: "black" %></h4>
+                <p><%= x.text_field :author_name, size: "20x5", class: "black" %></p>
                 
-                <h4><%= x.label "Article", style: "color:black" %></h4>
-                <p><%= x.text_area :text, size: "57x20", style: "color: black" %></p>
+                <h4><%= x.label "Article", class: "black" %></h4>
+                <p><%= x.text_area :text, size: "57x20", class: "black" %></p>
                 
+                <h4><%= x.label "Choose article image", class: "black" %></h4>
                 <span class="picture">
                      <%= x.file_field :picture, accept: 'image/jpeg, image/gif, image/png' %>
                 </span>
@@ -23,8 +24,8 @@
         <div class="col-sm-6 well">
             <%= form_for :video do |x| %>
             
-                <h4><%= x.label "Add video Link",         style: "color:black" %></h4>
-                <p><%=  x.text_field :link, size: "20x5", style: "color:black" %></p>
+                <h4><%= x.label "Add video Link",         class: "black" %></h4>
+                <p><%=  x.text_field :link, size: "20x5", class: "black" %></p>
                 
                 <%= x.submit 'Add Video', class: "btn btn-sm btn-primary" %>
             
@@ -33,12 +34,12 @@
         <div class="col-sm-6 well">
             <%= form_for :quote do |x| %>
             
-                <h4><%= x.label "Add New Daily Quote",      style: "color:black" %></h4>
-                <h4><%= x.label "Author",                   style: "color:black" %></h4>
-                <p><%=  x.text_field :author, size: "20x5", style: "color:black" %></p>
+                <h4><%= x.label "Add New Daily Quote",      class: "black" %></h4>
+                <h4><%= x.label "Author",                   class: "black" %></h4>
+                <p><%=  x.text_field :author, size: "20x5", class: "black" %></p>
                 
-                <h4><%= x.label "Daily Quote Text",        style: "color:black" %></h4>
-                <p><%=  x.text_area  :quote, size: "40x6", style: "color:black" %></p>
+                <h4><%= x.label "Daily Quote Text",        class: "black" %></h4>
+                <p><%=  x.text_area  :quote, size: "40x6", class: "black" %></p>
                 
                 <%= x.submit 'Add New Daily Quote', class: "btn btn-sm btn-primary" %>
                    
@@ -48,53 +49,53 @@
             <%= form_for :userpanel do |x| %>
             
                 <h3><%= x.label "Add UserPanel Content (Add one at a time - 
-                Video/Exercise/Course",        style: "color:black" %></h3>
+                Video/Exercise/Course",        class: "black" %></h3>
                 <hr>
-                <h4><%= x.label "Video Link",                   style: "color:black" %></h4>
-                <p><%=  x.text_field :user_video, size: "20x5", style: "color:black" %></p>
-                <%= x.label "HTML Video",  style: "color:black" %>
+                <h4><%= x.label "Video Link",                   class: "black" %></h4>
+                <p><%=  x.text_field :user_video, size: "20x5", class: "black" %></p>
+                <%= x.label "HTML Video",  class: "black" %>
                 <%= x.check_box :html_video  %>
-                <%= x.label "CSS Video",   style: "color:black" %>
+                <%= x.label "CSS Video",   class: "black" %>
                 <%= x.check_box :css_video   %>
-                <%= x.label "JS Video",    style: "color:black" %>
+                <%= x.label "JS Video",    class: "black" %>
                 <%= x.check_box :js_video    %>
-                <%= x.label "ROR Video",   style: "color:black" %>
+                <%= x.label "ROR Video",   class: "black" %>
                 <%= x.check_box :ror_video   %>
-                <%= x.label "OTHER Video", style: "color:black" %>
+                <%= x.label "OTHER Video", class: "black" %>
                 <%= x.check_box :other_video %>
                 <hr>
-                <h4><%= x.label "Exercise",                  style: "color:black" %></h4>
-                <p><%=  x.text_area :exercise, size: "20x5", style: "color:black" %></p>
-                <%= x.label "HTML exercise",  style: "color:black" %>
+                <h4><%= x.label "Exercise",                  class: "black" %></h4>
+                <p><%=  x.text_area :exercise, size: "20x5", class: "black" %></p>
+                <%= x.label "HTML exercise",  class: "black" %>
                 <%= x.check_box :html_exercise  %>
-                <%= x.label "CSS exercise",   style: "color:black" %>
+                <%= x.label "CSS exercise",   class: "black" %>
                 <%= x.check_box :css_exercise   %>
-                <%= x.label "JS exercise",    style: "color:black" %>
+                <%= x.label "JS exercise",    class: "black" %>
                 <%= x.check_box :js_exercise    %>
-                <%= x.label "ROR exercise",   style: "color:black" %>
+                <%= x.label "ROR exercise",   class: "black" %>
                 <%= x.check_box :ror_exercise   %>
-                <%= x.label "OTHER exercise", style: "color:black" %>
+                <%= x.label "OTHER exercise", class: "black" %>
                 <%= x.check_box :other_exercise %>
                 <hr>
-                <h4><%= x.label "Project",                  style: "color:black" %></h4>
-                <p><%=  x.text_area :project, size: "20x5", style: "color:black" %></p>
+                <h4><%= x.label "Project",                  class: "black" %></h4>
+                <p><%=  x.text_area :project, size: "20x5", class: "black" %></p>
                 <hr>
-                <h4><%= x.label "Final Project",                  style: "color:black" %></h4>
-                <p><%=  x.text_area :final_project, size: "20x5", style: "color:black" %></p>
+                <h4><%= x.label "Final Project",                  class: "black" %></h4>
+                <p><%=  x.text_area :final_project, size: "20x5", class: "black" %></p>
                 <hr>
-                <h4><%= x.label "Course Link",               style: "color:black" %></h4>
-                <p><%=  x.text_field  :course, size: "20x5", style: "color:black" %></p>
-                <%= x.label "HTML course",  style: "color:black" %>
+                <h4><%= x.label "Course Link",               class: "black" %></h4>
+                <p><%=  x.text_field  :course, size: "20x5", class: "black" %></p>
+                <%= x.label "HTML course",  class: "black" %>
                 <%= x.check_box :html_course  %>
-                <%= x.label "CSS course",   style: "color:black" %>
+                <%= x.label "CSS course",   class: "black" %>
                 <%= x.check_box :css_course   %>
-                <%= x.label "JS course",    style: "color:black" %>
+                <%= x.label "JS course",    class: "black" %>
                 <%= x.check_box :js_course    %>
-                <%= x.label "ROR course",   style: "color:black" %>
+                <%= x.label "ROR course",   class: "black" %>
                 <%= x.check_box :ror_course   %>
-                <%= x.label "OTHER course", style: "color:black" %>
+                <%= x.label "OTHER course", class: "black" %>
                 <%= x.check_box :other_course %>
-                <%= x.label "Free Course Or Paid (if checked is free)", style: "color:black" %>
+                <%= x.label "Free Course Or Paid (if checked is free)", class: "black" %>
                 <%= x.check_box :free %>
                 
                 <%= x.submit 'Add UserPanel Content', class: "btn btn-sm btn-primary" %>

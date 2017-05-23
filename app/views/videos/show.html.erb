@@ -1,0 +1,18 @@
+<% provide(:title, 'Video') %>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="video2">
+                <iframe src=<%= "https://www.youtube.com/embed/#{@video.link}" %>
+                                    frameborder="0" allowfullscreen class="show-video">
+                    </iframe>
+                </div>
+                <h3 class="article-title2"><%= @video.title unless @video.nil? %></h3>
+            </div>
+            <!--<% if logged_in? && current_user.admin? %>
+                <%= link_to "Edit", edit_video_path, class: "btn btn-sm btn-primary" %>
+            <% end %>-->
+            <h5 class="black">Comments</h5>
+        </div>
+    </div>
+</div>

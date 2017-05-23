@@ -8,7 +8,7 @@
                     <iframe width="380" height="300" id="video"
                         src=<%= "https://www.youtube.com/embed/#{x.link}" %> frameborder="0" allowfullscreen>
                     </iframe>
-                    <h4>Video Title <!-- add id=""title_p" when you will have embeded ruby --></h4>
+                    <h4><%= link_to x.title, video_path(x.id) %></h4>
                     <div style="color: white">
                         <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
                         <i class="fa fa-comment-o" aria-hidden="true"></i>

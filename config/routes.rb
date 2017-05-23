@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   #Show routes
   get "resume"     => 'resume#show'
   get "backend"    => 'static_pages#backend'
-  get "videos"     => 'videos#index'
   get 'learn_html' => 'learn#html'
   get 'learn_css'  => 'learn#css'
   get 'learn_javascript' => 'learn#javascript'
@@ -41,6 +40,7 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :quotes
+  resources :videos, :except => [:new]
   
   # Edit actions
   
