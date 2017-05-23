@@ -365,13 +365,14 @@ hr {
 }
 
 #video2 {
-  height:100vh;
-  width: 100%;
+  height:90vh;
+  text-align:center;
+  width:100%;
 }
 
 .show-video {
-  height: 93%;
-  width: 95%;
+  height: 92%;
+  width: 92%;
 }
 
 iframe {
@@ -783,6 +784,10 @@ input {
 
 .black {
   color: black;
+}
+
+.white {
+  color: white;
 }
 
 .grav_size {

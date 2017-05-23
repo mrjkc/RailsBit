@@ -5,14 +5,24 @@
             <div id="video2">
                 <iframe src=<%= "https://www.youtube.com/embed/#{@video.link}" %>
                                     frameborder="0" allowfullscreen class="show-video">
-                    </iframe>
+                </iframe>
+                <div class="row">
+                    <span class="white">Like</span>&nbsp
+                    <%= link_to like_video_path(@video, like: true), method: :post do %>
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 
+                        &nbsp <%= @video.thumbs_up_total %>
+                    <% end %> &nbsp
+                    <%= link_to like_video_path(@video, like: false), method: :post do %>
+                        <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                        &nbsp <%= @video.thumbs_down_total %>
+                    <% end %>
                 </div>
-                <h3 class="article-title2"><%= @video.title unless @video.nil? %></h3>
             </div>
-            <!--<% if logged_in? && current_user.admin? %>
-                <%= link_to "Edit", edit_video_path, class: "btn btn-sm btn-primary" %>
-            <% end %>-->
-            <h5 class="black">Comments</h5>
+            <h3 class="article-title2"><%= @video.title unless @video.nil? %></h3>
         </div>
+        <!--<% if logged_in? && current_user.admin? %>
+            <%= link_to "Edit", edit_video_path, class: "btn btn-sm btn-primary" %>
+            <% end %>-->
+        <h5 class="black">Comments</h5>
     </div>
 </div>
