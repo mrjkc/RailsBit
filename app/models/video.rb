@@ -9,4 +9,8 @@ class Video < ActiveRecord::Base
     def thumbs_down_total
         self.likes.where(likes: false).size
     end
+    
+    def comments_total
+        self.comments.where(video_id: self.id).size
+    end
 end

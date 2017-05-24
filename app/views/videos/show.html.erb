@@ -23,6 +23,29 @@
         <!--<% if logged_in? && current_user.admin? %>
             <%= link_to "Edit", edit_video_path, class: "btn btn-sm btn-primary" %>
             <% end %>-->
-        <h5 class="black">Comments</h5>
+        <div class="row">
+            <div id="video-comments">
+                <h5>Comments</h5>
+                <hr>
+                <i class="fa fa-comments white" aria-hidden="true"></i>
+                <%= form_for :comment, url: {controller: "videos", action: "comment"} do | comment | %>
+                    <%= comment.text_area :comment, size: "20x5" %>
+                    <%= comment.hidden_field :video_id, :value => @video.id %>
+                    <%= comment.hidden_field :user_id, :value => current_user.id unless current_user.nil? %>
+                    <%= comment.submit "Comment", class: "btn btn-md btn-default" %>
+                <% end %>
+                <i class="fa fa-comment-o white" aria-hidden="true"></i>
+                <span class="white"><%= @video.comments_total %></span>
+                <br>
+                <% @comments.each do |x| %>
+                    <div class="well">
+                        <%= gravatar_for_comments User.find(x.user_id) if !x.user_id.nil? %>
+                            <h6 class="black"><%= user_hash(x.user_id) %></h6>
+                            <p class="black small-font"><%= x.comment %></p>
+                    </div>
+                    <hr class="white">
+                <% end %>
+            </div>
+        </div>
     </div>
 </div>

@@ -13,6 +13,7 @@
                         <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
                         &nbsp <%= x.thumbs_up_total %> &nbsp
                         <i class="fa fa-comment-o" aria-hidden="true"></i>
+                        &nbsp <%= x.comments_total %>
                     </div>
                 </div>
                 <% if logged_in? && current_user.admin? %>

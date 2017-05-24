@@ -43,6 +43,7 @@ Rails.application.routes.draw do
   resources :videos, :except => [:new] do
     member do
       post 'like'
+      post 'comment'
     end
   end  
   

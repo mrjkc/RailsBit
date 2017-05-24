@@ -4,6 +4,7 @@ class VideosController < ApplicationController
     def show
         @video = Video.find(params[:id])
         @articles = Article.all
+        @comments = Comment.joins(:video).where({video_id: @video.id})
     end
     
     def index 
@@ -33,9 +34,29 @@ class VideosController < ApplicationController
         end
     end
     
+    def comment
+        @video = Video.find(params[:id])
+        if logged_in?
+            @comment = Comment.create(comment_params)
+            if @comment.save
+                flash[:success] = "Comment Added" 
+                redirect_to :back
+            else
+                redirect_to :back
+            end 
+        else
+            flash[:danger] = "You must login in order to comment"
+            redirect_to :back
+        end
+    end
+    
     private
     
     def admin_user
        redirect_to(root_url) unless current_user.admin? 
+    end
+    
+    def comment_params
+        params.require(:comment).permit(:comment, :user_id, :article_id, :video_id)
     end
 end
