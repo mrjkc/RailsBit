@@ -1,3 +1,5 @@
+// custom popup message when user registers
+// Only appears once on user create
 /* global $ */
 console.log("file is running...")
 $(document).ready(function(){

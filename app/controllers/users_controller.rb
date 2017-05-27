@@ -5,8 +5,6 @@ class UsersController < ApplicationController
     before_action :admin_user, only: :destroy
     respond_to :js, :html
     
-    require 'execjs'
-    
     def index
        @users = User.paginate(page: params[:page]) 
     end
@@ -33,8 +31,10 @@ class UsersController < ApplicationController
            # do shit
            log_in @user
            flash[:success] = "Welcome to RailsBit.com"
+           usercreate = User.find(@user.id)
+           usercreate.usercreate = true
+           usercreate.save!
            redirect_to '/userpanel'
-           @user_popup = true
        else
            render 'new'
        end
@@ -55,10 +55,20 @@ class UsersController < ApplicationController
     end
     
     def panel
-       @userpanel = Userpanel.all 
+        if current_user.usercreate == true
+            @generate = true
+        end
+        @userpanel = Userpanel.all
        #source = File.read(Rails.root.join('app/assets/javascripts/userpanel.js'))
        #context = ExecJS.compile(source)
        #context.call('ShowCustomDialog()')
+       
+       # reset usercreate flag so that poup does not show up again
+        if current_user.usercreate == true
+            usr = User.find(current_user.id)
+            usr.usercreate = false
+            usr.save!
+        end    
        
     end 
     
