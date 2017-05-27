@@ -92,7 +92,6 @@ class ArticlesController < ApplicationController
         if logged_in?
             like = Like.create(likes: params[:like], user: current_user, article: @article)
             if like.valid?
-                flash[:success] = "Your selection was successful"
                 redirect_to :back
             else
                 flash[:danger] = "You can not select more than once"

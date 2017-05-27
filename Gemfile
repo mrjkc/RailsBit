@@ -23,6 +23,7 @@ gem 'jquery-ui-rails'
 gem 'font-awesome-sass'
 gem 'responders'
 gem 'pry'
+gem 'execjs'
 
 group :production do
   gem 'pg', '~> 0.18.4'

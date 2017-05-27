@@ -1,9 +1,12 @@
 <% if logged_in? %>
-<div class="container">
+<div class="container" id="userpanel-popup">
     <div class="row center">
         <h4>You are <span class="blink_me">100</span> days away from becoming a web developer</h4>
     </div>
     <!-- custom pop up on login -->
+    <% if @user_popup %>
+        <%= javascript_include_tag "userpanel" %>
+    <% end %>    
     <input type="button" id ="btnTest" value="Test"/>
     <div id="dialog" title="Alert message" style="display: none">
         <div class="ui-dialog-content ui-widget-content">

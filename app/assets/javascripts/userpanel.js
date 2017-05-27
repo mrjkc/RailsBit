@@ -1,8 +1,8 @@
 /* global $ */
 $(document).ready(function(){
-    $('#btnTest').click(function(){
+    //$('#btnTest').click(function(){
     ShowCustomDialog();
-    });
+    //});
 });
 
 function ShowCustomDialog() {
@@ -30,7 +30,6 @@ function ShowDialogBox(title, content, btn1text, btn2text, functionText, paramet
         btn2css = "showcss";
         }
     $("#lblMessage").html(content);
-
     $("#dialog").dialog({
         show: { effect: "blind", duration: 300 },
         resizable: false,

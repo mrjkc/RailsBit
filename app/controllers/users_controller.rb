@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
+    
     before_action :logged_in_user, only: [:edit, :update, :index, :destroy] 
     before_action :correct_user, only: [:edit, :update]
     before_action :admin_user, only: :destroy
     respond_to :js, :html
+    
+    require 'execjs'
     
     def index
        @users = User.paginate(page: params[:page]) 
@@ -31,7 +34,7 @@ class UsersController < ApplicationController
            log_in @user
            flash[:success] = "Welcome to RailsBit.com"
            redirect_to '/userpanel'
-           #popup_method()
+           @user_popup = true
        else
            render 'new'
        end
@@ -53,19 +56,15 @@ class UsersController < ApplicationController
     
     def panel
        @userpanel = Userpanel.all 
+       #source = File.read(Rails.root.join('app/assets/javascripts/userpanel.js'))
+       #context = ExecJS.compile(source)
+       #context.call('ShowCustomDialog()')
+       
     end 
     
     private
         def popup_method
-            respond_to do |format|
-                format.html { redirect_to '/userpanel' }
-                sleep(2)
-                puts "rendering javascript..."
-                format.js { 
-                            render :js => "custom_javascript/popup.js", 
-                                   :layout => false  
-                 }
-            end
+            
         end
         
         def user_params
