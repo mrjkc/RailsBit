@@ -75,7 +75,7 @@
 <div class="container"> 
     <div class="row">
         <h1>Popular Videos</h1>
-        <%= @videos.find_each do |x| %>
+        <% @videos.each do |x| %>
             <div class="col-md-3 col-sm-6 center">
                     <iframe src=<%= "https://www.youtube.com/embed/#{x.link}" %>
                                     frameborder="0" allowfullscreen class="video">
