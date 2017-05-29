@@ -20,7 +20,7 @@
     <ul>
         <li>
             <h4 class="underline">Free External Content</t></h4>
-            <h5>Ruby Basics (You Can Choose To Complete Just One)</h5>
+            <h5>Before You Start - Ruby Basics (You Can Choose To Complete Just One)</h5>
             <ul>
                 <li><a href="http://tryruby.org/levels/1/challenges/0">TryRuby</a></li>
                 <li><a href="https://www.codecademy.com/learn/ruby">Codecademy Ruby Course</a></li>
@@ -36,9 +36,25 @@
             </ul>
         </li>
         <li>
-            <h4 class="underline">Recommended Paid Courses</t></h4>
-            <h5>Free Quality Content</h5>
-            <h5>Paid Quality Courses</h5>
+            <h4 class="underline">Recommended Professional Paid Courses</t></h4>
+            <% @courses.each do |x| %>
+                <% if x.course != "" %>
+                    <ul>
+                        <li><a href=<%= "#{x.course}" %>>TEST</a></li>
+                        <% x.attributes.each_pair do |z| %>
+                            <% puts z %>
+                            <% case z.to_s 
+                               when "html_course" %><a><%= "HTML Course" %></a> 
+                            <% when "css_course" %><%= "CSS Course" %>
+                            <% when "js_course" %><%= "JavaScript Course" %>
+                            <% when "ror_course" %><%= "Ruby On Rails Course" %>
+                            <% when "other_course" %><%= "Other Course" %>
+                            <% end %>
+                        <% end %>    
+                    </ul>    
+                <% end %>        
+            <% end %>
+            
         </li>
         <li>
             <h4>HTML</h4>

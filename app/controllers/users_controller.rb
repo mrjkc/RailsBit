@@ -55,6 +55,7 @@ class UsersController < ApplicationController
     end
     
     def panel
+        @courses = Userpanel.all
         if current_user.usercreate == true
             @generate = true
         end
