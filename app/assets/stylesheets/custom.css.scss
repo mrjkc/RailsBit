@@ -261,6 +261,11 @@ p {
   margin-left: 25%;
 }
 
+.edit-form {
+  color: black;
+  width: 50%;
+}
+
 #articles {
 	overflow: hidden;
   @include app-font;

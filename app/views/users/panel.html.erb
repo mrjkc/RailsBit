@@ -19,42 +19,50 @@
     <!-- start of the skills section -->
     <ul>
         <li>
-            <h4 class="underline">Free External Content</t></h4>
-            <h5>Before You Start - Ruby Basics (You Can Choose To Complete Just One)</h5>
-            <ul>
-                <li><a href="http://tryruby.org/levels/1/challenges/0">TryRuby</a></li>
-                <li><a href="https://www.codecademy.com/learn/ruby">Codecademy Ruby Course</a></li>
-                <li><a href="https://www.udemy.com/course-dashboard-redirect/?course_id=746146">
-                    Udemy Ruby Course</a></li>
-                <li><a href="https://teamtreehouse.com/library/ruby-basics">
-                    TeamTreeHouse Ruby Course</a></li>
-            </ul>
-            <h5>Other Useful Websites</h5>
-            <ul>
-                <li><a href="http://www.blackbytes.info/">BlackBytes Blog</a></li>
-                <li><a href="http://railscasts.com/">RailsCasts Screencasts</a></li>
-            </ul>
-        </li>
-        <li>
             <h4 class="underline">Recommended Professional Paid Courses</t></h4>
             <% @courses.each do |x| %>
                 <% if x.course != "" %>
                     <ul>
                         <li><a href=<%= "#{x.course}" %>>TEST</a></li>
+                        <%= "html_course" unless x.html_course == false %>
+                        <%= x.css_course unless false %>
+                        <%= x.js_course unless false %>
+                        <%= x.ror_course unless false %>
                         <% x.attributes.each_pair do |z| %>
                             <% puts z %>
-                            <% case z.to_s 
-                               when "html_course" %><a><%= "HTML Course" %></a> 
-                            <% when "css_course" %><%= "CSS Course" %>
-                            <% when "js_course" %><%= "JavaScript Course" %>
-                            <% when "ror_course" %><%= "Ruby On Rails Course" %>
-                            <% when "other_course" %><%= "Other Course" %>
+                            <% case z
+                               when "html_course" %>
+                                   <a><%= "HTML Course" %></a> 
+                            <% when "css_course" %>
+                                    <%= "CSS Course" %>
+                            <% when "js_course" %>
+                                    <%= "JavaScript Course" %>
+                            <% when "ror_course" %>
+                                    <%= "Ruby On Rails Course" %>
+                            <% when "other_course" %>
+                                    <%= "Other Course" %>
                             <% end %>
                         <% end %>    
                     </ul>    
                 <% end %>        
             <% end %>
-            
+            <li>
+                <h4 class="underline">Free Content</t></h4>
+                <h5>Before You Start - Ruby Basics (You Can Choose To Complete Just One)</h5>
+                <ul>
+                    <li><a href="http://tryruby.org/levels/1/challenges/0">TryRuby</a></li>
+                    <li><a href="https://www.codecademy.com/learn/ruby">Codecademy Ruby Course</a></li>
+                    <li><a href="https://www.udemy.com/course-dashboard-redirect/?course_id=746146">
+                        Udemy Ruby Course</a></li>
+                    <li><a href="https://teamtreehouse.com/library/ruby-basics">
+                        TeamTreeHouse Ruby Course</a></li>
+                </ul>
+                <h5>Other Useful Websites</h5>
+                <ul>
+                    <li><a href="http://www.blackbytes.info/">BlackBytes Blog</a></li>
+                    <li><a href="http://railscasts.com/">RailsCasts Screencasts</a></li>
+                </ul>
+            </li>
         </li>
         <li>
             <h4>HTML</h4>
@@ -153,9 +161,24 @@
             <div style="border-top: 15px dotted #f99f1a; margin-top: 30px;"></div>
         </li>
         <li>
-            <h4 class="underline">Other Referrences</h4>
-            <h5>Free Quality Content</h5>
-            <h5>Paid Quality Courses</h5>
+            <h4 class="underline">Youtuber Channels That You Should Check Out</h4>
+            <div class="col-sm-6 col-xs-12">
+                <h5>CodingPhase</h5>
+                <%= image_tag('codingphase.jpg') %>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <h5>Chris Sean</h5>
+                <%= image_tag('chrissean.jpeg') %>
+            </div>
+                <div class="col-sm-6 col-xs-12">
+                <h5>John Morris</h5>
+            <%= image_tag('johnmorris.jpeg') %>
+            </div>
+                <div class="col-sm-6 col-xs-12">
+                <h5>Chris Hawkes</h5>
+            <%= image_tag('chrishawkes.jpg') %>
+            </div>
+            
         </li>
     </ul>
 </div>
