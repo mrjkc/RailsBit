@@ -2,7 +2,7 @@ class CreateForums < ActiveRecord::Migration
   def change
     create_table :forums do |t|
       
-      t.string :created_by
+      t.integer :created_by
       t.string :title
       t.string :category
       t.string :comments

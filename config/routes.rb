@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :quotes
+  resources :forums
   resources :videos, :except => [:new] do
     member do
       post 'like'

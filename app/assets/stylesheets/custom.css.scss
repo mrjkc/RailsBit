@@ -714,6 +714,25 @@ input {
   border: 8px solid white;
 }
 
+/* forum styles */
+
+.table-style tr {
+  color: white;
+}
+
+.table-style th {
+  padding: 10px;
+  width: 100%;
+  /* testing */
+  border-radius: 10px;
+	background-image: url('background-3.jpg');
+	line-height: 50px;
+	border: 4px solid #f99f1a;
+}
+#forum-header {
+  border: 4px solid white;
+}
+
 /* misc styles */
 
 .article-title2{
