@@ -3,19 +3,19 @@
     <table class="table-style">
         <tr>
             <th>
-                <h5>title</h5>
+                <h5>Topic</h5>
             </th>
             <th>
-                <h5>category</h5>
+                <h5>Category</h5>
             </th>
             <th>
-                <h5>comments</h5>
+                <h5>Comments</h5>
             </th>
         </tr>
-        <% @forums.each do |x| %>
+        <% @forums.find_each do |x| %>
             <tr>
                 <th>
-                    <%= x.comments %>
+                    <%= link_to x.comments, forum_path(x.id) %>
                 </th>
                 <th>
                     <%= x.category %>
