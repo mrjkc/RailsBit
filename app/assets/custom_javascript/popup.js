@@ -6,11 +6,7 @@ $(document).ready(function(){
     ShowCustomDialog();
 });
 
-
-ShowCustomDialog();
-
-console.log("method is running...")
-
+// method to show custom dialog box
 function ShowCustomDialog() {
     ShowDialogBox('Welcome to RailsBit.com',
     'Congratulations! You are about to change your life by becoming a web developer. ' +
@@ -18,8 +14,9 @@ function ShowCustomDialog() {
      ' This page is a \'userpanel\' page to track your progress and access your tutorials and courses \r\n' +
      ', Lets Begin!',
     'Start Your Journey!','', 'GoToAssetList',null);
-	}
+}
 
+// buld custom dialog box
 function ShowDialogBox(title, content, btn1text, btn2text, functionText, parameterList) {
     var btn1css;
     var btn2css;
@@ -48,20 +45,19 @@ function ShowDialogBox(title, content, btn1text, btn2text, functionText, paramet
         hide: { effect: 'clip', duration: 400 },
         buttons: [
                     {
-                        text: btn1text,
-                        "class": btn1css,
-                        click: function () {
-                            $("#dialog").dialog('close')
-                            
-                        }
+                      text: btn1text,
+                      "class": btn1css,
+                      click: function () {
+                        $("#dialog").dialog('close');
+                      }
                     },
                     {
-                        text: btn2text,
-                        "class": btn2css,
-                        click: function () {
-                            $("#dialog").dialog('close');
-                        }
+                      text: btn2text,
+                      "class": btn2css,
+                      click: function () {
+                        $("#dialog").dialog('close');
+                      }
                     }
-                ]
-            });
-        }
+                  ]
+    });
+}
